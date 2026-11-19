@@ -16,3 +16,4 @@ tmp/
 
 # Archives: build these on release, never commit them
 *.zip
+_site/

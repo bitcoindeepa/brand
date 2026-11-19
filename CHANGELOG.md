@@ -4,6 +4,15 @@ All notable changes to the Bitcoin Deepa brand are recorded here. The format fol
 
 ## [Unreleased]
 
+### Added
+
+- Public brand site on GitHub Pages: the brand guidelines and the colour system as web pages, with every asset at a stable URL and downloadable zips (all assets, SVG only, PNG only) built on each change.
+- A visual quick reference in the README.
+
+### Changed
+
+- The guideline pages moved from `guidelines/` to `site/` and now load images as files instead of embedding them, so they open quickly.
+
 ## [1.0.0] - 2026-11-20
 
 First release of the brand in this repository.

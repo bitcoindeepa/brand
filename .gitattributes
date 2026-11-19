@@ -15,5 +15,5 @@
 *.svg  -text -merge diff
 
 # Generated or bundled files: hide from GitHub language stats and diffs
-guidelines/*.html linguist-generated=true -diff
+site/img/** linguist-generated=true
 design-system/tokens.css linguist-generated=true

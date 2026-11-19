@@ -1,0 +1,1 @@
+The primary logo: Yaka mask above the wordmark. `BDLogo_Black.svg` for white and light grounds ("bitcoin" in `brand-black`); `BDLogo_White.svg` for black and dark grounds ("bitcoin" in `brand-white`). Both have the mask in the `yaka-1`→`yaka-6` gradient and දීප in `bitcoin-orange`. Transparent background.

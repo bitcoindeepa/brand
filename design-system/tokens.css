@@ -1,0 +1,96 @@
+/* Bitcoin Deepa colour tokens. Generated from guidelines/colour.html. */
+:root {
+  /* Primary */
+  --bitcoin-orange: #F8931A;  /* Satoshi Orange */
+  --brand-black: #000001;  /* Genesis Black */
+  --brand-white: #FFFFFE;  /* Whitepaper White */
+  /* Grounds */
+  --charcoal: #1D1E1D;  /* Cold Storage Charcoal */
+  --warm-white: #FFFCFA;  /* Paper Wallet Cream */
+  /* Yaka gradient */
+  --yaka-1: #F6921E;
+  --yaka-2: #F58D1E;
+  --yaka-3: #F2801F;
+  --yaka-4: #EE6B21;
+  --yaka-5: #E94D24;
+  --yaka-6: #E74126;
+  --yaka-gradient: linear-gradient(45deg, #F6921E 0%, #F58D1E 21%, #F2801F 44%, #EE6B21 67%, #E94D24 91%, #E74126 100%);
+  /* Lanka (secondary pattern) */
+  --lanka-maroon: #8D183A;  /* Perahera Maroon */
+  --lanka-teal: #00544F;  /* Sinharaja Green */
+  --lanka-saffron: #FFBE2B;  /* Vesak Gold */
+  --lanka-orange: #EA7400;  /* Thambili Orange */
+  /* Orange scale */
+  --orange-50: #FFF2DD;
+  --orange-100: #FFE5C6;
+  --orange-200: #FFCD9A;
+  --orange-300: #FFB262;
+  --orange-400: #FC992A;
+  --orange-500: #F8931A;
+  --orange-600: #BC6800;
+  --orange-700: #964E00;
+  --orange-800: #713500;
+  --orange-900: #4E1E00;
+  /* Light theme (default) */
+  --surface: #EEEFF3;
+  --surface-card: #FFFFFE;
+  --surface-raised: #F8F9FA;
+  --surface-inverse: #1F2A36;
+  --on-inverse: #FFFFFE;
+  --ink: #000001;
+  --ink-muted: #64748B;
+  --ink-subtle: #475569;
+  --line: #E2E8F0;
+  --primary: #F8931A;
+  --on-primary: #000001;
+  --disabled: #E2E8F0;
+  --on-disabled: #64748B;
+  --orange-text: #9A4C00;
+  --focus-ring: #9A4C00;
+  --success: #1E7B4F;
+  --warning: #8A5A00;
+  --danger: #D63B3B;
+}
+/* Dark theme: follows the system, or set data-theme="dark" on <html> */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #0B0F14;
+    --surface-card: #1B2027;
+    --surface-raised: #0B0D10;
+    --surface-inverse: #1F2A36;
+    --on-inverse: #F1F5F9;
+    --ink: #FFFFFE;
+    --ink-muted: #94A3B8;
+    --ink-subtle: #94A3B8;
+    --line: #334155;
+    --primary: #F8931A;
+    --on-primary: #000001;
+    --disabled: #334155;
+    --on-disabled: #94A3B8;
+    --orange-text: #F8931A;
+    --focus-ring: #F8931A;
+    --success: #3DBE7A;
+    --warning: #FFBE2B;
+    --danger: #F45A5A;
+  }
+}
+:root[data-theme="dark"] {
+  --surface: #0B0F14;
+  --surface-card: #1B2027;
+  --surface-raised: #0B0D10;
+  --surface-inverse: #1F2A36;
+  --on-inverse: #F1F5F9;
+  --ink: #FFFFFE;
+  --ink-muted: #94A3B8;
+  --ink-subtle: #94A3B8;
+  --line: #334155;
+  --primary: #F8931A;
+  --on-primary: #000001;
+  --disabled: #334155;
+  --on-disabled: #94A3B8;
+  --orange-text: #F8931A;
+  --focus-ring: #F8931A;
+  --success: #3DBE7A;
+  --warning: #FFBE2B;
+  --danger: #F45A5A;
+}

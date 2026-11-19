@@ -1,0 +1,1 @@
+Horizontal wordmark without the mask. `DeepaLogo_BnO.svg` (black + orange) on light grounds, `DeepaLogo_WnO.svg` (white + orange) on dark grounds. `Logo_b_BTC.png` / `Logo_w_BTC.png` add the `bitcoin-orange` ₿ coin in front, for audiences new to the name. PNGs are 2000px wide, transparent.

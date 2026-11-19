@@ -1,0 +1,1 @@
+*Pearl of Satoshi* as artwork (Nunito Sans Condensed Italic). `Slogan_Black.png` / `Slogan_White.png`: single colour. `Slogan_OrangeBlack.png` / `Slogan_OrangeWhite.png`: "Satoshi" in `bitcoin-orange`, the rest black or white. Use the black versions on light grounds, white on dark.

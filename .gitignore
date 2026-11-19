@@ -1,0 +1,18 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# Design tool scratch and exports
+*.tmp
+~$*
+*.ai~
+Adobe Illustrator Recovery/
+exports/
+tmp/
+
+# Archives: build these on release, never commit them
+*.zip

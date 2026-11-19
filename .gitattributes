@@ -1,0 +1,19 @@
+# Normalise text files to LF in the repository
+* text=auto eol=lf
+
+# Brand artwork: never diff or merge as text
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.pdf  binary
+*.ai   binary
+*.psd  binary
+*.fig  binary
+
+# SVG is text, but treat it as artwork: no line-ending changes, no merges
+*.svg  -text -merge diff
+
+# Generated or bundled files: hide from GitHub language stats and diffs
+guidelines/*.html linguist-generated=true -diff
+design-system/tokens.css linguist-generated=true

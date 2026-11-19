@@ -1,0 +1,1 @@
+The only approved logos for a `bitcoin-orange` ground (square, 2000px, orange background included). `BD_OrangeBG_Black.png`: black mask, black wordmark. `BD_OrangeBG_White.png`: darker-orange mask, white "bitcoin", black දීප.

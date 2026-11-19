@@ -1,0 +1,73 @@
+Bitcoin Deepa Brand Assets Licence
+Version 1.0, November 2026
+
+Copyright (c) 2026 Ceylon Cash (PVT) LTD. All rights reserved.
+
+This repository holds the brand identity of Bitcoin Deepa: the names
+"Bitcoin Deepa" and "Pearl of Satoshi", the Yaka mask symbol, the Sinhala
+දීප glyph mark, the logos, wordmarks, app icons, profile pictures, slogan
+artwork, patterns, the colour system and design tokens, and the brand
+guidelines that describe them (together, the "Brand Assets").
+
+The Brand Assets are the property of Ceylon Cash (PVT) LTD ("CeylonCash")
+and are protected by trademark, copyright and other intellectual property
+law. They are NOT open source. Publishing them in a public repository does
+not place them under any open-source licence, including the AGPL-3.0
+licence that covers Bitcoin Deepa's software.
+
+1. Permitted use
+
+   You may use the Brand Assets, unmodified and as the brand guidelines in
+   this repository describe, only:
+
+   a. to work on official Bitcoin Deepa projects, products, events and
+      communications, as a member, contributor, contractor or partner of
+      Bitcoin Deepa or CeylonCash;
+   b. to refer to Bitcoin Deepa truthfully in news, reviews, education,
+      commentary or listings (nominative reference), without implying that
+      CeylonCash endorses, sponsors or is affiliated with you or your work;
+   c. as CeylonCash has otherwise agreed with you in writing.
+
+2. Not permitted
+
+   Without prior written permission from CeylonCash, you may not:
+
+   a. use the Brand Assets, or anything confusingly similar to them, in the
+      name, logo or branding of your own product, service, project or
+      organisation;
+   b. alter, recolour, redraw, distort or combine the Brand Assets with
+      other marks;
+   c. present a modified product, fork or build in a way that could be
+      mistaken for an official Bitcoin Deepa release;
+   d. sell the Brand Assets, or merchandise bearing them;
+   e. imply endorsement, partnership or official status.
+
+3. Forks and redistribution
+
+   If you fork this repository or redistribute Bitcoin Deepa software, you
+   may keep the Brand Assets only for the purposes in section 1. A modified
+   or independent distribution must carry its own name and branding and
+   remove the Bitcoin Deepa marks and logo assets.
+
+4. Contributions
+
+   By submitting a contribution to this repository you confirm that you
+   have the right to submit it, and you assign to CeylonCash, or where
+   assignment is not possible grant CeylonCash an exclusive, perpetual,
+   worldwide, royalty-free licence to, all rights in any brand artwork,
+   design or wording you contribute, so that the brand stays under one
+   owner. Each commit must be signed off under the Developer Certificate of
+   Origin (see CONTRIBUTING.md).
+
+5. No warranty
+
+   The Brand Assets are provided "as is", without warranty of any kind.
+
+6. Termination
+
+   Permission under section 1 ends automatically if you breach this
+   licence. CeylonCash may also withdraw permission for any use at any
+   time by notice.
+
+See TRADEMARK.md for the organisation's trademark policy. For permission
+or questions, contact hello@bitcoindeepa.com.

@@ -1,0 +1,4 @@
+# Every change to the brand needs a review from a brand owner.
+# Replace the line below with the GitHub team or people who approve brand changes,
+# for example:  * @bitcoindeepa/brand
+# Until then, branch protection on main should require one approving review.

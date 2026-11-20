@@ -14,7 +14,7 @@ This repository is the single source for Bitcoin Deepa's brand assets. It follow
 2. Export artwork **from the master files**. Never trace, redraw or re-export a PNG back to SVG.
 3. Put each file in its numbered folder under `assets/` and follow that folder's naming pattern.
 4. Supply both formats where the asset has both: SVG for vector artwork, PNG for everything (transparent, 2400px on the long side; app icons 1024px, profile pictures 1080px, both square and opaque).
-5. Update everything that describes the asset: `guidelines/brand.html`, `guidelines/colour.html`, `design-system/` and `CHANGELOG.md` under **Unreleased**.
+5. Update everything that describes the asset: the brand site (`site/index.html`, `site/colour/index.html`, and any preview images in `site/img/`), `design-system/` and `CHANGELOG.md` under **Unreleased**.
 6. Sign off every commit (Developer Certificate of Origin):
 
    ```bash

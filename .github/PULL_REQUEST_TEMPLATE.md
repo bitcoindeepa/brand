@@ -17,7 +17,7 @@
 - [ ] Exported from the master files, not redrawn or traced
 - [ ] SVG and PNG both supplied where the asset has both; PNG at the folder's standard size
 - [ ] File names follow the folder's existing pattern
-- [ ] `guidelines/`, `design-system/` and `CHANGELOG.md` updated to match
+- [ ] `site/`, `design-system/` and `CHANGELOG.md` updated to match
 - [ ] Commits are signed off (`git commit -s`)
 - [ ] Company names written as "Ceylon Cash (PVT) LTD" / "CeylonCash"
 

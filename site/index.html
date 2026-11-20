@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Official brand guidelines for Bitcoin Deepa: logos, the Yaka symbol, app icons, colour, type and patterns.">
+<link rel="icon" href="img/icon_L.png">
+<style>body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Bitcoin Deepa Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,700&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,300..800;1,6..12,75..125,300..800&family=Noto+Sans+Sinhala:wght@400;700&display=swap">
+<style>
+/* Layout: a black masthead that carries the logo, then a long single-column book of numbered chapters on a pure ground; each chapter opens with a side label on wide screens. Lanka-colour tiles mark the masthead edge. */
+:root {
+  --bg: #ffffff;
+  --panel: #f6f2ed;
+  --ink: #000000;
+  --muted: #6b625a;
+  --line: #e4ddd5;
+  --orange: #f8931a;
+  --orange-text: #9a4c00;
+  --on-orange: #000000;
+  --black: #000001;
+  --charcoal: #1d1e1d;
+  --warm: #fffcfa;
+  --white: #fffffe;
+  --maroon: #8d183a;
+  --teal: #00544f;
+  --saffron: #ffbe2b;
+  --lorange: #ea7400;
+  --font-display: "Ubuntu", "Noto Sans Sinhala", system-ui, sans-serif;
+  --font-body: "Nunito Sans", "Noto Sans Sinhala", system-ui, sans-serif;
+  --font-si: "Noto Sans Sinhala", "Nunito Sans", system-ui, sans-serif;
+  --r: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000; --panel: #141210; --ink: #ffffff; --muted: #a39a91; --line: #2b2723;
+    --orange-text: #f8931a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000; --panel: #141210; --ink: #ffffff; --muted: #a39a91; --line: #2b2723;
+  --orange-text: #f8931a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: var(--orange-text); }
+:focus-visible { outline: 2px solid var(--orange-text); outline-offset: 2px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+
+/* Masthead: always the brand's black, whatever the theme */
+.mast { background: var(--black) url('img/Pattern_B_Seamless.png') repeat; background-size: 86px auto; color: var(--white); position: relative; overflow: hidden; }
+.mast .wrap { padding-block: 56px 48px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: end; }
+.mast-logo { max-width: 280px; width: 100%; justify-self: center; }
+.mast h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 6vw, 72px); line-height: .98; letter-spacing: -.015em; margin: 0 0 20px; text-wrap: balance; }
+.mast h1 em { font-style: italic; color: var(--orange); }
+.mast p { margin: 0; color: #c9c1b8; max-width: 46ch; font-size: 17px; }
+.mast .meta { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; color: #a39a91; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; }
+.mast .meta b { color: var(--white); font-weight: 700; }
+.tiles-strip { height: 28px; display: grid; grid-template-columns: 3fr 1fr 2fr 1fr 4fr 1fr 2fr; gap: 6px; padding: 0 6px 6px; background: var(--black); }
+.tiles-strip span { border-radius: 0 0 8px 8px; }
+
+/* Chapter nav */
+nav.toc { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav.toc .wrap { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-block: 10px; }
+nav.toc a { flex: none; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 700; padding: 6px 12px; border-radius: var(--r); }
+nav.toc a:hover { color: var(--ink); background: var(--panel); }
+
+/* Chapters */
+section.ch { padding-block: 72px 24px; }
+.ch-grid { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; }
+.ch-label { font-family: var(--font-display); font-weight: 500; font-size: 14px; color: var(--muted); padding-top: 10px; }
+.ch-label .n { display: block; font-weight: 700; font-size: 40px; line-height: 1; color: var(--orange-text); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 42px); line-height: 1.08; margin: 0 0 16px; letter-spacing: -.01em; text-wrap: balance; }
+h3 { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 1.3; margin: 0 0 8px; }
+.lede { font-size: 19px; line-height: 1.55; max-width: 62ch; margin: 0 0 32px; }
+.body { max-width: 64ch; }
+.body p { margin: 0 0 14px; }
+.small { font-size: 13px; color: var(--muted); line-height: 1.45; }
+.file { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12.5px; }
+.si { font-family: var(--font-si); }
+
+/* Idea */
+.idea { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.idea > div { background: var(--panel); border-radius: var(--r); padding: 22px; min-width: 0; }
+.idea .big { font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 1.1; margin-bottom: 10px; }
+.idea .big.si { font-family: var(--font-si); color: var(--orange-text); }
+.idea p { margin: 0; font-size: 15px; }
+
+/* Logo tiles */
+.duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.tile { border-radius: var(--r); display: grid; place-items: center; padding: 48px 24px; min-height: 360px; }
+.tile img { width: min(240px, 70%); }
+.t-white { background: var(--white); box-shadow: inset 0 0 0 1px var(--line); }
+.t-black { background: var(--black); box-shadow: inset 0 0 0 1px var(--line); }
+.t-orange { background: var(--orange); }
+.cap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 10px; font-size: 14px; }
+.cap b { font-weight: 700; }
+.cap span { color: var(--muted); }
+
+.family { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 40px; }
+.fam { min-width: 0; }
+.fam .pair { display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--r); overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); }
+.fam .pair > div { display: grid; place-items: center; padding: 28px 18px; min-height: 180px; }
+.fam .pair img { max-height: 130px; width: auto; max-width: 100%; }
+.fam .pair.wide > div { min-height: 120px; }
+.fam .pair.wide img { max-height: 54px; }
+.fam h3 { margin-top: 14px; }
+.fam p { margin: 0; font-size: 15px; color: var(--muted); }
+
+/* Symbol */
+.symbol { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; margin-top: 40px; }
+.sym-hero { background: var(--black); border-radius: var(--r); display: grid; place-items: center; padding: 40px; min-height: 380px; box-shadow: inset 0 0 0 1px var(--line); }
+.sym-hero img { width: min(260px, 80%); }
+.sym-text { min-width: 0; }
+.sym-text p { margin: 0 0 12px; }
+.sym-mono { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.sym-mono > div { border-radius: var(--r); display: grid; place-items: center; padding: 20px; box-shadow: inset 0 0 0 1px var(--line); }
+.sym-mono img { height: 110px; width: auto; }
+
+.endorse { margin-top: 32px; display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 24px; align-items: center; }
+.endorse-demo { background: var(--charcoal); border-radius: var(--r); padding: 28px; display: flex; flex-direction: column; align-items: center; }
+.endorse-demo span { color: #ffffff; font-size: 12px; align-self: flex-end; margin-right: 34px; margin-bottom: 2px; }
+.endorse-demo img { width: 160px; }
+
+/* App icon */
+.ai-hero { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 32px; align-items: center; }
+.ai-phone { background: linear-gradient(160deg, #3a3330, #1d1e1d); border-radius: 36px; padding: 32px 22px 40px; box-shadow: inset 0 0 0 6px #111111; }
+.ai-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 12px; }
+.ai-app { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.ai-app i, .ai-app img { width: 52px; height: 52px; border-radius: 12px; display: block; }
+.ai-app i { background: rgba(255,255,255,.16); }
+.ai-app span { font-size: 10px; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 64px; }
+.ai-app.ours span { font-weight: 700; }
+.ai-files { display: grid; gap: 16px; min-width: 0; }
+.ai-file { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 18px; align-items: center; }
+.ai-file img { width: 96px; border-radius: 22px; box-shadow: inset 0 0 0 1px var(--line), 0 1px 3px rgba(0,0,0,.12); }
+.ai-file h3 { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; font-weight: 700; }
+.ai-file p { margin: 0; }
+.ai-sizes { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-end; background: var(--panel); border-radius: var(--r); padding: 28px; }
+.ai-sizes figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.ai-sizes img { box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+.ai-sizes figcaption { font: 700 15px var(--font-display); text-align: center; font-variant-numeric: tabular-nums; }
+.ai-sizes figcaption span { display: block; font: 400 12px var(--font-body); color: var(--muted); }
+.ai-masks { display: flex; flex-wrap: wrap; gap: 28px; }
+.ai-masks figure { margin: 0; text-align: center; font-size: 13px; color: var(--muted); }
+.mk { width: 140px; height: 140px; overflow: hidden; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,.18); margin-bottom: 8px; }
+.mk img { width: 100%; height: 100%; display: block; }
+.mk b { position: absolute; inset: 17%; border: 1.5px dashed #9a4c00; border-radius: 50%; }
+.ai-why { display: flex; gap: 14px; align-items: center; margin-top: 10px; }
+.ai-why img:first-child { background: #ffffff; border-radius: 6px; opacity: .9; outline: 2px solid #c8102e; outline-offset: 2px; }
+
+.dp-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.dp { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.dp img { width: 100%; max-width: 220px; aspect-ratio: 1; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line), 0 0 0 1px var(--line); }
+.dp figcaption b { display: block; font: 700 16px var(--font-display); }
+.dp figcaption span { display: block; font-size: 13px; color: var(--muted); max-width: 30ch; margin: 4px auto 0; }
+.dp-sizes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; background: var(--panel); border-radius: var(--r); padding: 20px; }
+.dp-chip { display: flex; gap: 10px; align-items: center; min-width: 0; }
+.dp-chip img { aspect-ratio: 1; border-radius: 50%; flex: none; box-shadow: 0 0 0 1px var(--line); }
+.dp-chip b { display: block; font-size: 14px; }
+.dp-chip span { display: block; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 860px) { .dp-row, .dp-sizes { grid-template-columns: 1fr; } .dp { flex-direction: row; text-align: left; } .dp img { width: 120px; } .dp figcaption span { margin: 4px 0 0; } }
+.ai-themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.ai-theme.orange { background: #f2eee9; color: #000000; }
+.ai-theme.orange .small { color: #5e564f; }
+.ai-themes .ai-theme { grid-template-columns: 1fr; align-content: start; }
+.ai-theme.orange .ai-pair img { box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+@media (max-width: 860px) { .ai-themes { grid-template-columns: 1fr; } .ai-themes .ai-theme { grid-template-columns: auto minmax(0, 1fr); } }
+.ai-theme { border-radius: var(--r); padding: 20px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: center; }
+.ai-theme.light { background: #f2eee9; color: #000000; }
+.ai-theme.dark { background: #000000; color: #ffffff; }
+.ai-theme.light .small { color: #5e564f; }
+.ai-theme.dark .small { color: #b8b0a8; }
+.ai-theme h3 { margin-bottom: 4px; }
+.ai-theme p { margin: 0; }
+.ai-pair { display: flex; gap: 10px; align-items: flex-end; }
+.ai-pair img:first-child { width: 80px; border-radius: 18px; }
+.ai-pair img:last-child { width: 36px; border-radius: 8px; }
+.ai-theme.light img { box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+.ai-theme.dark img { box-shadow: 0 0 0 1px #3a3a3a; }
+
+.laser { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; margin-top: 40px; }
+.laser-art { background: #000000; border-radius: var(--r); display: grid; place-items: center; padding: 36px; min-height: 380px; box-shadow: inset 0 0 0 1px var(--line); }
+.laser-art img { width: min(280px, 85%); }
+.laser-text { min-width: 0; }
+.laser-text p { margin: 0 0 12px; }
+.laser-text ul { padding-left: 18px; margin: 0 0 12px; }
+.laser-text li { margin-bottom: 6px; }
+
+.boldyaka { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: center; margin-top: 40px; }
+.by-art { background: #ffffff; border-radius: var(--r); box-shadow: inset 0 0 0 1px var(--line); padding: 24px 20px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0; }
+.by-art img { width: 100%; max-width: 200px; }
+.by-art span { font-size: 12px; font-weight: 700; color: #6b625a; }
+.by-text { min-width: 0; padding-left: 8px; }
+.by-text p { margin: 0 0 12px; }
+.by-text ul { padding-left: 18px; margin: 0 0 12px; }
+.by-text li { margin-bottom: 6px; }
+
+.halfyaka { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 24px; align-items: stretch; margin-top: 40px; }
+.hy-pair { display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--r); overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); min-width: 0; }
+.hy-text { min-width: 0; align-self: center; }
+.hy-text p { margin: 0 0 12px; }
+.hy-text ul { padding-left: 18px; margin: 0 0 12px; }
+.hy-text li { margin-bottom: 6px; }
+.hy-demo { position: relative; min-height: 0; overflow: hidden; }
+.hy-left { background: #ffffff; }
+.hy-right { background: #000000; }
+.hy-demo img { position: absolute; top: 3%; height: 94%; width: auto; max-width: 92%; object-fit: contain; }
+.hy-left img { left: 0; object-position: left; }
+.hy-right img { right: 0; object-position: right; }
+.hy-demo span { position: absolute; bottom: 12px; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.hy-left span { background: #000000; color: #ffffff; }
+.hy-right span { background: #ffffff; color: #000000; }
+.hy-left span { right: 12px; }
+.hy-right span { left: 12px; }
+
+/* Backgrounds */
+.grounds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.grounds .tile { height: 310px; min-height: 0; padding: 28px; display: flex; align-items: center; justify-content: center; }
+.grounds .tile img { width: min(170px, 75%); }
+.grounds .tile.full { padding: 0; overflow: hidden; }
+.grounds .tile.full img { width: calc(min(170px, 75%) * 1.72); max-width: none; flex: none; }
+
+/* Clear space */
+.space { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.cs { background: var(--white); border-radius: var(--r); padding: 40px; display: grid; place-items: center; box-shadow: inset 0 0 0 1px var(--line); }
+.cs-box { position: relative; padding: 34px; outline: 2px dashed #f8931a; outline-offset: -2px; background: repeating-linear-gradient(45deg, rgba(248,147,26,.10) 0 6px, transparent 6px 12px); }
+.cs-box img { width: 180px; background: #fff; }
+.cs-x { position: absolute; font: 700 13px var(--font-display); color: #9a4c00; }
+.cs-x.t { top: 8px; left: 50%; transform: translateX(-50%); }
+.cs-x.l { left: 10px; top: 50%; transform: translateY(-50%); }
+.mins { display: grid; gap: 14px; }
+.min { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.min:last-child { border-bottom: 0; }
+.min .v { font-family: var(--font-display); font-weight: 700; font-size: 26px; line-height: 1; font-variant-numeric: tabular-nums; }
+.min .v small { display: block; font-size: 13px; color: var(--muted); font-weight: 500; margin-top: 4px; }
+
+/* Don'ts */
+.donts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.dont { min-width: 0; }
+.dont .box { aspect-ratio: 1 / 1; border-radius: var(--r); display: grid; place-items: center; overflow: hidden; position: relative; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); }
+.dont .box img { width: 52%; }
+.dont .box::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top right, transparent calc(50% - 1.5px), #c8102e calc(50% - 1.5px), #c8102e calc(50% + 1.5px), transparent calc(50% + 1.5px)); }
+.dont p { margin: 10px 0 0; font-size: 14px; }
+.d-stretch img { transform: scaleX(1.45) scaleY(.8); }
+.d-rotate img { transform: rotate(-14deg); }
+.d-recolor img { filter: hue-rotate(160deg) saturate(1.4); }
+.d-orange { background: var(--orange) !important; box-shadow: none !important; }
+.d-pattern { background-size: 90px auto !important; }
+.d-shadow img { filter: drop-shadow(6px 8px 6px rgba(0,0,0,.55)); }
+.d-dark { background: var(--black) !important; }
+
+/* Colour */
+.swatches { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; }
+.sw { border-radius: var(--r); overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); min-width: 0; display: flex; flex-direction: column; }
+.sw .chip { min-height: 170px; padding: 18px; display: flex; align-items: flex-end; font-family: var(--font-display); font-weight: 700; font-size: 22px; }
+.sw .info { padding: 14px 18px 16px; background: var(--bg); display: grid; gap: 2px; font-size: 13px; color: var(--muted); }
+.sw .info b { color: var(--ink); font-size: 15px; }
+.copy { font: inherit; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; background: none; border: 0; padding: 0; color: var(--ink); cursor: pointer; text-align: left; justify-self: start; border-bottom: 1px dashed var(--line); }
+.copy:hover { color: var(--orange-text); }
+.copy.done::after { content: "  copied"; color: var(--orange-text); font-family: var(--font-body); }
+.grad { margin-top: 32px; }
+.grad-bar { height: 96px; border-radius: var(--r); background: linear-gradient(90deg, #f6921e 0%, #f58d1e 21%, #f2801f 44%, #ee6b21 67%, #e94d24 91%, #e74126 100%); }
+.stops { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 10px; font-size: 12px; color: var(--muted); }
+.stops b { display: block; color: var(--ink); font-weight: 700; font-size: 12px; }
+.heritage { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
+.heritage .sw .chip { min-height: 110px; font-size: 16px; }
+.rules { margin-top: 32px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.rule { border-top: 2px solid var(--ink); padding-top: 12px; font-size: 15px; min-width: 0; }
+.rule h3 { font-size: 16px; }
+.pairs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.pair-chip { border-radius: 8px; padding: 8px 12px; font-weight: 700; font-size: 14px; display: inline-flex; gap: 8px; align-items: center; }
+.pair-chip i { font-style: normal; font-weight: 600; font-size: 12px; opacity: .85; }
+
+/* Type */
+.faces { display: grid; gap: 16px; }
+.face { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px; background: var(--panel); border-radius: var(--r); padding: 28px; align-items: center; }
+.face .spec { font-size: clamp(56px, 9vw, 104px); line-height: .95; overflow-wrap: anywhere; }
+.face .about h3 { margin-bottom: 4px; }
+.face .about p { margin: 0; font-size: 15px; color: var(--muted); }
+.face .about .w { margin-top: 10px; font-size: 13px; color: var(--ink); font-weight: 700; }
+.scale { margin-top: 32px; border-top: 1px solid var(--line); }
+.row { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; align-items: baseline; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.row .k { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.row .k span { display: block; text-transform: none; letter-spacing: 0; font-weight: 400; font-variant-numeric: tabular-nums; }
+.row > div:last-child { min-width: 0; overflow-wrap: anywhere; }
+
+/* Pattern */
+.pat-band { border-radius: var(--r); overflow: hidden; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); }
+.pat-band img { width: 100%; max-height: 220px; object-fit: cover; object-position: top; }
+.pat-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: 16px; }
+.pat-row .box { border-radius: var(--r); background: var(--white); box-shadow: inset 0 0 0 1px var(--line); display: grid; place-items: center; min-height: 200px; padding: 24px; }
+.pat-row .box img { max-height: 160px; width: auto; }
+
+.grounds3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* B pattern */
+.bpat { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.bp { border-radius: var(--r); min-height: 220px; background-image: url('img/Pattern_B_Seamless.png'); background-repeat: repeat; background-size: 86px auto; display: flex; align-items: flex-end; padding: 16px; box-shadow: inset 0 0 0 1px var(--line); }
+.bp span { font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.bp.night { background-color: var(--black); }
+.bp.night span { background: rgba(0,0,0,.5); color: #ffffff; }
+.bp.warm { background-color: var(--warm); }
+.bp.warm span { background: #ffffff; color: #8d183a; }
+
+/* Leaf pattern */
+.lp { border-radius: var(--r); min-height: 300px; background-repeat: repeat; background-size: 220px auto; display: flex; align-items: flex-end; padding: 16px; box-shadow: inset 0 0 0 1px var(--line); }
+.lp span { font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.lp.light span { background: #ffffff; color: #000000; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.lp.dark span { background: #000000; color: #ffffff; }
+
+/* In use */
+.use { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+.use figure { margin: 0; min-width: 0; }
+.use .u-wide { grid-column: 1 / -1; }
+.use + .use-h, .use-h { margin: 36px 0 14px; font-size: 18px; }
+.use4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.use-bd { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.bd-notes { min-width: 0; align-self: center; }
+.bd-notes ul { padding-left: 18px; margin: 8px 0 0; }
+.bd-notes li { margin-bottom: 8px; }
+.pair-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.use img { width: 100%; border-radius: var(--r); box-shadow: inset 0 0 0 1px var(--line); }
+.use figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); max-width: 70ch; }
+.use figcaption b { display: block; color: var(--ink); font-weight: 700; }
+.retired { margin-top: 40px; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 24px; padding: 24px; border-radius: var(--r); box-shadow: inset 0 0 0 1px var(--line); align-items: start; }
+.retired img { width: 100%; border-radius: 8px; filter: grayscale(.35); }
+.retired ul { margin: 10px 0 0; padding-left: 18px; font-size: 15px; }
+.retired li { margin-bottom: 6px; }
+
+/* Voice */
+.voice { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.voice > div { min-width: 0; }
+.say { margin-top: 32px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.say > div { border-radius: var(--r); padding: 20px 22px; min-width: 0; }
+.say .yes { background: var(--panel); }
+.say .no { box-shadow: inset 0 0 0 1px var(--line); }
+.say .tag { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+.say .yes .tag { color: var(--orange-text); }
+.say .no .tag { color: var(--muted); }
+.say ul { margin: 0; padding-left: 18px; }
+.say li { margin-bottom: 6px; }
+
+/* Files */
+.files { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 320px; font-size: 14px; }
+th, td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+
+.mast-dl { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.dl-sub { font-size: 13px; color: #c9c1b8; }
+.dl-btn { text-decoration: none; font: 700 15px/1 var(--font-body); padding: 12px 18px; border-radius: var(--r); border: 0; background: var(--ink); color: var(--bg); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.dl-btn span { font-weight: 600; font-size: 12px; opacity: .75; }
+.dl-btn.dl-primary { background: var(--orange); color: #000001; }
+.dl-btn:hover { filter: brightness(1.06); }
+.dl-btn[disabled] { opacity: .5; cursor: progress; }
+.dl-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px 32px; align-items: center; background: var(--panel); border-radius: var(--r); padding: 24px; margin-bottom: 28px; }
+.dl-panel h3 { margin-bottom: 6px; }
+.dl-panel p { margin: 0; }
+.dl-actions { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+.dl-actions .dl-btn { justify-content: space-between; }
+.dl-status { grid-column: 1 / -1; min-height: 1em; }
+.dl-off .dl-btn, .dl-off .mast-dl { display: none; }
+@media (max-width: 860px) { .dl-panel { grid-template-columns: 1fr; } }
+footer { margin-top: 72px; background: var(--black) url('img/Pattern_B_Seamless.png') repeat; background-size: 86px auto; color: #a39a91; }
+footer .wrap { padding-block: 32px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; font-size: 13px; }
+footer img { height: 40px; width: auto; }
+
+@media (max-width: 860px) {
+  .mast .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .mast-logo { max-width: 260px; }
+  .ch-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ch-label .n { display: inline; font-size: 18px; margin-right: 8px; }
+  .idea, .voice, .rules { grid-template-columns: 1fr; }
+  .grounds { grid-template-columns: 1fr; }
+  .use4, .use-bd { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bd-notes { grid-column: 1 / -1; }
+  .donts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .swatches { grid-template-columns: 1fr 1fr; }
+  .swatches .sw:first-child { grid-column: 1 / -1; }
+  .heritage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .face, .space, .say, .pat-row, .symbol, .bpat, .endorse, .ai-hero, .ai-themes, .laser { grid-template-columns: 1fr; }
+  .halfyaka { grid-template-columns: 1fr; }
+  .hy-demo { min-height: 380px; }
+  .boldyaka { grid-template-columns: 1fr 1fr; }
+  .by-text { grid-column: 1 / -1; padding-left: 0; }
+  .ai-phone { max-width: 320px; }
+  section.ch { padding-block: 52px 8px; }
+}
+@media (max-width: 560px) {
+  .duo, .family, .use { grid-template-columns: 1fr; }
+  .use4, .use-bd { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bd-notes { grid-column: 1 / -1; }
+  .retired { grid-template-columns: 1fr; }
+  .retired img { max-width: 200px; }
+  .tile { min-height: 280px; }
+  .stops { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .row { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+
+
+<header class="mast">
+  <div class="wrap">
+    <div>
+      <h1>Bitcoin Deepa <em>brand guidelines</em></h1>
+      <p>How to use the logo, colours, type and pattern of Bitcoin Deepa, the CeylonCash brand that brings Bitcoin to Sri Lanka.</p>
+      <div class="mast-dl"><a class="dl-btn dl-primary" href="downloads/bitcoin-deepa-brand-assets.zip" id="dl-hero">Download all assets</a><span class="dl-sub">SVG + PNG · zip</span></div>
+      <div class="meta"><span>Version <b>1.0</b></span><span>November <b>2026</b></span><span>Brand owner <b>CeylonCash</b></span></div>
+    </div>
+    <img class="mast-logo" src="img/PrimaryWhite_w_Slogan.png" alt="Bitcoin Deepa logo with the slogan Pearl of Satoshi">
+  </div>
+</header>
+<div class="tiles-strip" aria-hidden="true">
+  <span style="background:var(--maroon)"></span><span style="background:var(--saffron)"></span><span style="background:var(--teal)"></span><span style="background:var(--lorange)"></span><span style="background:var(--orange)"></span><span style="background:var(--saffron)"></span><span style="background:var(--maroon)"></span>
+</div>
+
+<nav class="toc" aria-label="Chapters">
+  <div class="wrap">
+    <a href="#idea">The idea</a><a href="#logo">Logo</a><a href="#appicon">App icon</a><a href="#dp">Profile picture</a><a href="#grounds">Backgrounds</a><a href="#space">Clear space</a><a href="#misuse">Misuse</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#pattern">Patterns</a><a href="#voice">Voice</a><a href="#files">Assets</a><a href="colour/">Colour system ↗</a>
+  </div>
+</nav>
+
+<main>
+<section class="ch" id="idea"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">01</span>The idea</div>
+  <div>
+    <h2>Bitcoin, from the island</h2>
+    <p class="lede">The identity joins three things: the global currency, the Sinhala language, and a guardian from Sri Lankan mask craft. Every part of the logo carries one of them.</p>
+    <div class="idea">
+      <div><div class="big">bitcoin</div><p>Set in lowercase, bold and slanted forward. It names the product plainly, in the world's language for it.</p></div>
+      <div><div class="big si">දීප</div><p><i>Deepa</i>, "island". Custom Sinhala lettering in Bitcoin orange. It puts Sri Lanka inside the name.</p></div>
+      <div><div class="big">Pearl of Satoshi</div><p>The slogan. Sri Lanka has long been called the Pearl of the Indian Ocean; here the pearl belongs to Bitcoin's creator.</p></div>
+    </div>
+    <div class="body" style="margin-top:28px">
+      <p>The <b>Yaka mask</b> is the brand's symbol. It is drawn as fine line art in a flame gradient, from amber at the base to red at the tips. It gives Bitcoin Deepa a face that no other Bitcoin company has, and wherever the brand needs a mark without words, the Yaka is that mark.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="logo"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">02</span>Logo</div>
+  <div>
+    <h2>The primary logo</h2>
+    <p class="lede">The stacked lockup, mask above wordmark, comes in two versions. Pick by the ground: black wordmark on light, white wordmark on dark. Use it everywhere it fits at 120px wide or more.</p>
+    <div class="duo">
+      <div><div class="tile t-white"><img src="img/BDLogo_Black.svg" alt="Primary logo, black version"></div><div class="cap"><b>Black version</b><span>White and light grounds</span></div></div>
+      <div><div class="tile t-black"><img src="img/BDLogo_White.svg" alt="Primary logo, white version"></div><div class="cap"><b>White version</b><span>Black and dark grounds</span></div></div>
+    </div>
+
+    <div class="symbol">
+      <div class="sym-hero"><img src="img/Yaka.svg" alt="The Yaka mask, Bitcoin Deepa's symbol"></div>
+      <div class="sym-text">
+        <h3 style="font-size:28px;font-weight:700">The Yaka is the symbol</h3>
+        <p>The mask stands for the brand on its own: social avatars, merchandise, watermarks, large crops on posters and packaging. Use the gradient version on white or black, and the single-colour versions for one-colour print, engraving and embossing.</p>
+        <div class="sym-mono">
+          <div class="t-white"><img src="img/Yaka_Black.png" alt="Yaka mask, black"></div>
+          <div class="t-black"><img src="img/Yaka_White.png" alt="Yaka mask, white"></div>
+        </div>
+        <p style="margin-top:16px">Two more ways the brand uses the mask: <b>cropped off the edge</b> of a layout, half in frame, and as a <b>faint watermark</b> behind content.</p>
+      </div>
+    </div>
+
+    <div class="boldyaka">
+      <div class="by-art"><img src="img/Yaka.svg" alt="Yaka, original stroke"><span>Original</span></div>
+      <div class="by-art"><img src="img/Yaka_Bold.svg" alt="Yaka, bold stroke"><span>Bold</span></div>
+      <div class="by-text">
+        <h3 style="font-size:24px;font-weight:700">Bold Yaka</h3>
+        <p>The same mask with every line drawn heavier, so the detail in the crown and the hood rays holds up when the symbol is small or reproduced roughly.</p>
+        <ul class="small">
+          <li>Use it below about 200px on screen, and for embroidery, engraving, stamps, signage seen from a distance and small print.</li>
+          <li>Use the original line weight everywhere else; it is the primary symbol.</li>
+          <li>Same colours and gradient as the original; never mix the two weights in one layout.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="halfyaka">
+      <div class="hy-text">
+        <h3 style="font-size:24px;font-weight:700">Half Yaka</h3>
+        <p>The mask cut down its centre line and set full height, so it fills a tall panel and bleeds off one edge: covers, banners, pull-ups and slide backgrounds. Use the gradient version on white or black; the cut side always sits flush on the panel edge.</p>
+        <ul class="small">
+          <li><b>Left-aligned:</b> the right half of the mask, sitting on the left edge of a layout.</li>
+          <li><b>Right-aligned:</b> the left half of the mask, sitting on the right edge, as on the LinkedIn covers.</li>
+          <li>Keep the cut exactly on the layout edge; never show the straight cut line inside the frame.</li>
+        </ul>
+      </div>
+      <div class="hy-pair">
+        <div class="hy-demo hy-left"><img src="img/Yaka_Half_Left.svg" alt="Half Yaka, left-aligned, on white"></div>
+        <div class="hy-demo hy-right"><img src="img/Yaka_Half_Right.svg" alt="Half Yaka, right-aligned, on black"></div>
+      </div>
+    </div>
+
+    <div class="laser">
+      <div class="laser-art"><img src="img/Yaka_LaserEyes.svg" alt="Yaka mask with glowing laser eyes"></div>
+      <div class="laser-text">
+        <h3 style="font-size:24px;font-weight:700">Laser-eyed Yaka</h3>
+        <p>The Yaka with the brand's red laser flare on both eyes, used exactly as drawn: a white-hot core, long thin cross rays and a soft red halo. The flare sits low in each eye, in the lower part of the inner oval, not at its centre. It nods to the "laser eyes" of Bitcoin culture and gives the mask a living presence on dark layouts such as covers, banners and event screens.</p>
+        <ul class="small">
+          <li>Dark grounds only (Genesis Black or Cold Storage Charcoal). On white the red glow loses its light.</li>
+          <li>Use the artwork as supplied; keep the lasers red or light only one eye on a full mask. Edge crops that show a single eye are fine.</li>
+          <li>One laser-eyed Yaka per layout. It is a hero moment, not a pattern.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="family">
+      <div class="fam">
+        <div class="pair"><div class="t-white"><img src="img/PrimaryBlack_w_Slogan.png" alt="Primary logo with slogan, for light grounds"></div><div class="t-black"><img src="img/PrimaryWhite_w_Slogan.png" alt="Primary logo with slogan, for dark grounds"></div></div>
+        <h3>Primary logo with slogan</h3><p>The primary logo with <i>Pearl of Satoshi</i> under "bitcoin", in a black version for light grounds and a white version for dark grounds. Use it for heroes, posters, packaging and campaign openers, where there is room to read the slogan.</p>
+      </div>
+      <div class="fam">
+        <div class="pair"><div class="t-white"><img src="img/Deepa_Symbol.jpg" alt="Deepa app icon" style="max-height:110px;border-radius:22px"></div><div class="t-black"><img src="img/BD_OrangeBG_White.jpg" alt="Logo on orange, white version" style="max-height:130px;border-radius:8px"></div></div>
+        <h3>App icon and orange version</h3><p>The දීප symbol is the app icon; see the App icon section. The orange-ground files are covered under Backgrounds.</p>
+      </div>
+      <div class="fam">
+        <div class="pair wide"><div class="t-white"><img src="img/DeepaLogo_BnO.svg" alt="Horizontal wordmark, black and orange"></div><div class="t-black"><img src="img/DeepaLogo_WnO.svg" alt="Horizontal wordmark, white and orange"></div></div>
+        <h3>Horizontal wordmark</h3><p>Navigation bars, email footers, and anywhere the stacked logo would be under 120px wide.</p>
+      </div>
+      <div class="fam">
+        <div class="pair wide"><div class="t-white"><img src="img/Logo_b_BTC.png" alt="Wordmark with Bitcoin coin, black"></div><div class="t-black"><img src="img/Logo_w_BTC.png" alt="Wordmark with Bitcoin coin, white"></div></div>
+        <h3>Wordmark with ₿ coin</h3><p>Ads, app-store listings and partner pages, for people who don't yet link the name with Bitcoin.</p>
+      </div>
+    </div>
+    <div class="endorse">
+      <div class="endorse-demo"><span>Powered By</span><img src="img/DeepaLogo_WnO.svg" alt="Powered by Bitcoin Deepa lockup"></div>
+      <div><h3>"Powered by" lockup</h3><p class="small">For products and campaigns that Bitcoin Deepa backs, such as the Lightning card and the book launch: "Powered By" in Nunito Sans, small and right-aligned above the horizontal wordmark. Keep the sponsored product's name as the hero and the lockup at the foot.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="appicon"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">03</span>App icon</div>
+  <div>
+    <h2>The app icon</h2>
+    <p class="lede">The app icon is the දීප symbol: the orange Sinhala glyph on a white tile. It is the one place the brand appears without the Yaka, because at icon sizes the mask's fine lines fill in.</p>
+
+    <div class="ai-hero">
+      <div class="ai-phone" aria-label="Home screen preview">
+        <div class="ai-grid">
+          <div class="ai-app"><i></i><span>Photos</span></div>
+          <div class="ai-app"><i></i><span>Maps</span></div>
+          <div class="ai-app"><i></i><span>Notes</span></div>
+          <div class="ai-app"><i></i><span>Wallet</span></div>
+          <div class="ai-app"><i></i><span>Clock</span></div>
+          <div class="ai-app ours"><img src="img/icon_L.png" alt="Bitcoin Deepa app icon"><span>Bitcoin Deepa</span></div>
+          <div class="ai-app"><i></i><span>Music</span></div>
+          <div class="ai-app"><i></i><span>Mail</span></div>
+        </div>
+      </div>
+      <div class="ai-files">
+        <div class="ai-file">
+          <img src="img/icon_std.png" alt="Standard app icon artwork">
+          <div><h3>Standard icon</h3><p class="small">Standard artwork. The glyph fills about half the tile, leaving room for the masks phones apply. Use for the App Store, Google Play, iOS, Android and PWA icons.</p></div>
+        </div>
+        <div class="ai-file">
+          <img src="img/icon_L.png" alt="Large-glyph icon artwork">
+          <div><h3>Large-glyph icon</h3><p class="small">Large glyph, tighter margins. Use at 48px and below: favicons, browser tabs, notification badges, where every pixel of glyph counts.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="use-h">Light, dark and orange</h3>
+    <div class="ai-themes">
+      <div class="ai-theme light"><div class="ai-pair"><img src="img/icon_std.png" alt="Light app icon"><img src="img/icon_L.png" alt="Light small icon"></div><div><h3>Light</h3><p class="small">Orange glyph on a white tile. The default icon, and the one for light-mode home screens and light browser tabs.</p></div></div>
+      <div class="ai-theme dark"><div class="ai-pair"><img src="img/icon_std_dark.png" alt="Dark app icon"><img src="img/icon_L_dark.png" alt="Dark small icon"></div><div><h3>Dark</h3><p class="small">The same orange glyph on a Cold Storage Charcoal (#1D1E1D) tile, for dark-mode home screens (iOS 18 and later supports a separate dark icon) and dark browser tabs.</p></div></div>
+      <div class="ai-theme orange"><div class="ai-pair"><img src="img/icon_std_orange.png" alt="Orange app icon"><img src="img/icon_L_orange.png" alt="Orange small icon"></div><div><h3>Orange</h3><p class="small">A white glyph on a Satoshi Orange (#F8931A) tile. Use it for campaigns, event apps, launchers and sticker packs, where the icon should read as Bitcoin orange at a glance.</p></div></div>
+    </div>
+
+    <h3 class="use-h">Sizes</h3>
+    <div class="ai-sizes">
+      <figure><img src="img/icon_std.png" alt="" style="width:128px;border-radius:28px"><figcaption>1024<span>Store listing</span></figcaption></figure>
+      <figure><img src="img/icon_std.png" alt="" style="width:90px;border-radius:20px"><figcaption>180<span>iPhone</span></figcaption></figure>
+      <figure><img src="img/icon_std.png" alt="" style="width:64px;border-radius:14px"><figcaption>192<span>Android, PWA</span></figcaption></figure>
+      <figure><img src="img/icon_L.png" alt="" style="width:48px;border-radius:10px"><figcaption>48<span>Small, uses _L</span></figcaption></figure>
+      <figure><img src="img/icon_L.png" alt="" style="width:32px;border-radius:6px"><figcaption>32<span>Favicon, _L</span></figcaption></figure>
+      <figure><img src="img/icon_L.png" alt="" style="width:16px;border-radius:3px"><figcaption>16<span>Favicon, _L</span></figcaption></figure>
+    </div>
+
+    <h3 class="use-h">Masks and safe zone</h3>
+    <div class="ai-masks">
+      <figure><div class="mk" style="border-radius:22.5%"><img src="img/icon_std.png" alt=""><b></b></div><figcaption>iOS rounded square</figcaption></figure>
+      <figure><div class="mk" style="border-radius:50%"><img src="img/icon_std.png" alt=""><b></b></div><figcaption>Android circle</figcaption></figure>
+      <figure><div class="mk" style="border-radius:32%"><img src="img/icon_std.png" alt=""><b></b></div><figcaption>Android squircle</figcaption></figure>
+    </div>
+    <p class="small" style="margin-top:10px;max-width:64ch">The dashed circle is Android's adaptive-icon safe zone (the inner 66% of the tile). The standard glyph sits inside it, so no mask crops it. Supply a square 1024px master with no transparency; the phone or store rounds the corners.</p>
+
+    <div class="rules" style="margin-top:28px">
+      <div class="rule"><h3>Two colours, plain tile</h3><p class="small">An orange <span class="file">#F8931A</span> glyph on <span class="file">#FFFFFE</span> (light) or Cold Storage Charcoal <span class="file">#1D1E1D</span> (dark), or a white glyph on a <span class="file">#F8931A</span> tile (orange). Never an orange glyph on orange, and no gradients.</p></div>
+      <div class="rule"><h3>Nothing else on it</h3><p class="small">No wordmark, no ₿ coin, no Yaka, no badge or border. The app name appears under the icon on its own.</p></div>
+      <div class="rule"><h3>Why not the Yaka</h3><p class="small">At 32px the mask turns into a smudge. The Yaka stays the brand symbol everywhere there is room for it.</p><div class="ai-why"><img src="img/Yaka.svg" alt="Yaka mask at 32 pixels" style="width:32px"><img src="img/icon_L.png" alt="Deepa icon at 32 pixels" style="width:32px;border-radius:6px"></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="dp"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">04</span>Profile picture</div>
+  <div>
+    <h2>Profile picture</h2>
+    <p class="lede">For social profiles, the ₿ coin with the දීප symbol on a solid square, in three versions: on black, on white and on Satoshi Orange.</p>
+    <div class="dp-row">
+      <figure class="dp"><img src="img/DP_Black_BTC.png" alt="Profile picture: orange Bitcoin coin and Deepa symbol on black"><figcaption><b>Black</b><span>Orange ₿ coin and දීප on Genesis Black, with the ₿ cut out to the ground. The default for the brand's social accounts.</span></figcaption></figure>
+      <figure class="dp"><img src="img/DP_White_BTC.png" alt="Profile picture: orange Bitcoin coin and Deepa symbol on white"><figcaption><b>White</b><span>Orange ₿ coin and දීප on Whitepaper White, with the ₿ cut out to the ground. For platforms with dark interfaces, where black disappears.</span></figcaption></figure>
+      <figure class="dp"><img src="img/DP_Orange_BTC.png" alt="Profile picture: white Bitcoin coin and Deepa symbol on orange"><figcaption><b>Orange</b><span>White ₿ coin and දීප on Satoshi Orange, with the ₿ cut out to the ground. For campaigns and events.</span></figcaption></figure>
+    </div>
+    <h3 class="use-h">In the feed</h3>
+    <div class="dp-sizes">
+      <div class="dp-chip"><img src="img/DP_Black_BTC.png" alt="" style="width:40px"><div><b>Bitcoin Deepa</b><span>@bitcoindeepa · 2h</span></div></div>
+      <div class="dp-chip"><img src="img/DP_White_BTC.png" alt="" style="width:40px"><div><b>Bitcoin Deepa</b><span>@bitcoindeepa · 2h</span></div></div>
+      <div class="dp-chip"><img src="img/DP_Orange_BTC.png" alt="" style="width:40px"><div><b>Bitcoin Deepa</b><span>@bitcoindeepa · 2h</span></div></div>
+    </div>
+    <div class="rules" style="margin-top:28px">
+      <div class="rule"><h3>Centred, inside the circle</h3><p class="small">The mark is 66% of the square's width, centred across and sitting a little below the middle, so the circle crop most platforms apply never touches it. Upload the 1080px square as it is.</p></div>
+      <div class="rule"><h3>Only these three grounds</h3><p class="small">Black or white take the orange mark; orange takes the white mark only, because orange vanishes on orange. No photos, patterns or other colours behind it.</p></div>
+      <div class="rule"><h3>One version per platform</h3><p class="small">Keep a profile on the same version so people recognise it. The orange one is for limited periods, then switch back.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="grounds"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">05</span>Backgrounds</div>
+  <div>
+    <h2>Three approved grounds</h2>
+    <p class="lede">White, black and Bitcoin orange. On orange the logo changes: the mask turns single-colour and දීප turns black, because orange on orange disappears. Use only the two orange-ground files there.</p>
+    <div class="grounds">
+      <div><div class="tile t-white"><img src="img/BDLogo_Black.svg" alt="Logo on white"></div><div class="cap"><b>White</b><span>Black version</span></div></div>
+      <div><div class="tile t-black"><img src="img/BDLogo_White.svg" alt="Logo on black"></div><div class="cap"><b>Black</b><span>White version</span></div></div>
+      <div><div class="tile t-orange full"><img src="img/BD_OrangeBG_Black.jpg" alt="Logo on orange, black version"></div><div class="cap"><b>Orange</b><span>Orange-ground versions only</span></div></div>
+    </div>
+    <div class="body" style="margin-top:24px">
+      <p><b>Photos:</b> place the logo only over a calm area where the matching version stands out clearly. If the area is busy, put the logo on a solid white or black panel first.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="space"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">06</span>Clear space &amp; size</div>
+  <div>
+    <h2>Give it room</h2>
+    <p class="lede">Keep clear space on every side equal to the height of the "b" in "bitcoin", marked <b>x</b> below. Text, edges and other logos stay outside it.</p>
+    <div class="space">
+      <div class="cs"><div class="cs-box"><span class="cs-x t">x</span><span class="cs-x l">x</span><img src="img/BDLogo_Black.svg" alt="Logo with clear space marked"></div></div>
+      <div class="mins">
+        <div class="min"><div class="v">120px<small>30mm print</small></div><div><h3>Stacked logo</h3><p class="small">Below this, switch to the horizontal wordmark.</p></div></div>
+        <div class="min"><div class="v">96px<small>25mm print</small></div><div><h3>Horizontal wordmark</h3><p class="small">Below this, use the Yaka symbol on its own.</p></div></div>
+        <div class="min"><div class="v">48px<small>15mm print</small></div><div><h3>Yaka symbol</h3><p class="small">The smallest size at which the mask's lines stay open. For app icons and favicons, use the දීප symbol.</p></div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="misuse"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">07</span>Misuse</div>
+  <div>
+    <h2>Never do this</h2>
+    <p class="lede">Use the files exactly as supplied. Never retype "bitcoin දීප" in a font: the දීප is custom lettering.</p>
+    <div class="donts">
+      <div class="dont"><div class="box d-stretch"><img src="img/BDLogo_Black.svg" alt=""></div><p>Stretch or squash it.</p></div>
+      <div class="dont"><div class="box d-rotate"><img src="img/BDLogo_Black.svg" alt=""></div><p>Rotate or re-slant it.</p></div>
+      <div class="dont"><div class="box d-recolor"><img src="img/BDLogo_Black.svg" alt=""></div><p>Change its colours.</p></div>
+      <div class="dont"><div class="box d-orange"><img src="img/BDLogo_Black.svg" alt=""></div><p>Put the full-colour logo on orange.</p></div>
+      <div class="dont"><div class="box d-dark"><img src="img/BDLogo_Black.svg" alt=""></div><p>Use the black version on dark grounds.</p></div>
+      <div class="dont"><div class="box d-shadow"><img src="img/BDLogo_Black.svg" alt=""></div><p>Add shadows, glows or outlines.</p></div>
+      <div class="dont"><div class="box d-pattern" style="background:#ffffff url('img/conc_light.svg') center"><img src="img/BDLogo_Black.svg" alt=""></div><p>Place it on the spiky-tile pattern. (The faint ₿ pattern is fine.)</p></div>
+      <div class="dont"><div class="box"><img src="img/DeepaLogo_BnO.svg" alt="" style="width:70%;transform:translateY(24px)"><img src="img/Yaka.svg" alt="" style="position:absolute;width:22%;top:18%;left:14%"></div><p>Rearrange the mask and wordmark.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="colour"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">08</span>Colour</div>
+  <div>
+    <h2>Bitcoin orange leads</h2>
+    <p class="lede">Orange carries the brand. Black and white are the grounds. The flame gradient belongs to the mask, and the four heritage colours belong to the secondary pattern. Click any value to copy it.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--orange);color:var(--on-orange)">Satoshi Orange</div><div class="info"><b>Primary</b><button class="copy" data-c="#F8931A">#F8931A</button><span>RGB 248 147 26</span><span>The orange of the ₿ logo, named for Bitcoin's creator.</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--black);color:var(--white)">Genesis Black</div><div class="info"><b>Ground, wordmark</b><button class="copy" data-c="#000001">#000001</button><span>RGB 0 0 1</span><span>After the genesis block, where Bitcoin began.</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--white);color:var(--black)">Whitepaper White</div><div class="info"><b>Ground, wordmark</b><button class="copy" data-c="#FFFFFE">#FFFFFE</button><span>RGB 255 255 254</span><span>After the 2008 Bitcoin whitepaper.</span></div></div>
+    </div>
+
+    <h3 style="margin-top:32px">Grounds</h3>
+    <p class="small" style="margin:0 0 12px">Cold Storage Charcoal for cards and product, Paper Wallet Cream for decks and documents, Genesis Black for print and merchandise.</p>
+    <div class="heritage grounds3" style="margin-top:0">
+      <div class="sw"><div class="chip" style="background:var(--charcoal);color:var(--white)">Cold Storage Charcoal</div><div class="info"><button class="copy" data-c="#1D1E1D">#1D1E1D</button><span>Cards, product. After the offline wallets that keep bitcoin safe.</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--warm);color:var(--maroon);box-shadow:inset 0 0 0 1px var(--line)">Paper Wallet Cream</div><div class="info"><button class="copy" data-c="#FFFCFA">#FFFCFA</button><span>Decks, documents. After keys printed on paper.</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--black);color:var(--white)">Genesis Black</div><div class="info"><button class="copy" data-c="#000001">#000001</button><span>Print, merchandise. The same black as the primary.</span></div></div>
+    </div>
+
+    <div class="grad">
+      <h3>Yaka flame gradient</h3>
+      <p class="small" style="margin:0 0 12px">Linear, bottom-left to top-right, six stops. For the mask and one hero moment at most. Never for text.</p>
+      <div class="grad-bar" role="img" aria-label="Gradient from amber to red"></div>
+      <div class="stops">
+        <div><b>0%</b><button class="copy" data-c="#F6921E">#F6921E</button></div>
+        <div><b>21%</b><button class="copy" data-c="#F58D1E">#F58D1E</button></div>
+        <div><b>44%</b><button class="copy" data-c="#F2801F">#F2801F</button></div>
+        <div><b>67%</b><button class="copy" data-c="#EE6B21">#EE6B21</button></div>
+        <div><b>91%</b><button class="copy" data-c="#E94D24">#E94D24</button></div>
+        <div><b>100%</b><button class="copy" data-c="#E74126">#E74126</button></div>
+      </div>
+    </div>
+
+    <div class="heritage">
+      <div class="sw"><div class="chip" style="background:var(--maroon);color:var(--white)">Perahera Maroon</div><div class="info"><button class="copy" data-c="#8D183A">#8D183A</button><span>The deep red of the Esala Perahera's festival cloth and the lion flag's field.</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--teal);color:var(--white)">Sinharaja Green</div><div class="info"><button class="copy" data-c="#00544F">#00544F</button><span>The dark canopy of Sinharaja, the island's last great rainforest.</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--saffron);color:var(--black)">Vesak Gold</div><div class="info"><button class="copy" data-c="#FFBE2B">#FFBE2B</button><span>The warm glow of Vesak lanterns and pandals.</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--lorange);color:var(--black)">Thambili Orange</div><div class="info"><button class="copy" data-c="#EA7400">#EA7400</button><span>The bright husk of the king coconut, sold at every roadside.</span></div></div>
+    </div>
+    <p class="small" style="margin-top:10px">Heritage colours come from the Sri Lankan flag and colour the secondary pattern. Perahera Maroon also works as the headline colour on Paper Wallet Cream (9:1). Keep the other three inside the pattern.</p>
+
+    <div class="rules">
+      <div class="rule"><h3>Text on orange is black</h3><p class="small">Black on orange reads 9.2:1. White on orange fails, so never use it for text.</p><div class="pairs"><span class="pair-chip" style="background:var(--orange);color:#000">Buy Bitcoin <i>9.2:1</i></span></div></div>
+      <div class="rule"><h3>Orange text needs a dark ground</h3><p class="small">Orange on white reads only 2.3:1. On white, set orange text in the darker #9A4C00.</p><div class="pairs"><span class="pair-chip" style="background:#000;color:#f8931a">On black <i>9.2:1</i></span><span class="pair-chip" style="background:#fff;color:#9a4c00;box-shadow:inset 0 0 0 1px var(--line)">On white <i>6.2:1</i></span></div></div>
+      <div class="rule"><h3>Two oranges, never side by side</h3><p class="small">Satoshi Orange and Thambili Orange are close but different. Keep Thambili Orange inside the pattern.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="type"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">09</span>Typography</div>
+  <div>
+    <h2>Three typefaces, two scripts</h2>
+    <p class="lede">Ubuntu for headlines, Nunito Sans for text, Noto Sans Sinhala for Sinhala. All three are free on Google Fonts. Ubuntu and Nunito Sans both appear in the master logo file.</p>
+    <div class="faces">
+      <div class="face"><div class="spec" style="font-family:var(--font-display);font-weight:700;font-style:italic">Aa₿</div><div class="about"><h3>Ubuntu</h3><p>Headlines. Bold for titles; bold italic for hero lines only, echoing the slant of the wordmark.</p><div class="w">Medium 500 · Bold 700 · Bold Italic</div></div></div>
+      <div class="face"><div class="spec" style="font-family:var(--font-body);font-weight:300;font-style:italic;font-stretch:80%">Aa</div><div class="about"><h3>Nunito Sans</h3><p>Body text, forms, captions. The slogan artwork uses its condensed italic.</p><div class="w">Light 300 · Regular 400 · SemiBold 600 · Bold 700</div></div></div>
+      <div class="face"><div class="spec si" style="font-weight:700">අආ</div><div class="about"><h3>Noto Sans Sinhala</h3><p>All Sinhala text. Give it more line height than Latin so vowel signs have room.</p><div class="w">Regular 400 · Bold 700</div></div></div>
+    </div>
+    <div class="scale">
+      <div class="row"><div class="k">Display<span>64 / 68 Ubuntu Bold Italic</span></div><div style="font:italic 700 clamp(36px,6vw,64px)/1.06 var(--font-display)">Bitcoin for Sri Lanka</div></div>
+      <div class="row"><div class="k">H1<span>40 / 46 Ubuntu Bold</span></div><div style="font:700 clamp(28px,4.5vw,40px)/1.15 var(--font-display)">Pearl of Satoshi</div></div>
+      <div class="row"><div class="k">H2<span>28 / 34 Ubuntu Bold</span></div><div style="font:700 28px/1.2 var(--font-display)">Buy, hold and learn</div></div>
+      <div class="row"><div class="k">Body<span>16 / 24 Nunito Sans</span></div><div style="font:400 16px/1.5 var(--font-body);max-width:56ch">Bitcoin Deepa helps people in Sri Lanka understand and use Bitcoin, in Sinhala and English.</div></div>
+      <div class="row"><div class="k">Caption<span>13 / 18 SemiBold, +4%</span></div><div style="font:600 13px/1.4 var(--font-body);letter-spacing:.04em">SATS · LKR · BTC</div></div>
+      <div class="row"><div class="k">Sinhala<span>16 / 28 Noto Sans Sinhala</span></div><div class="si" style="font-size:16px;line-height:1.75">ශ්‍රී ලංකාව සඳහා බිට්කොයින්</div></div>
+    </div>
+    <p class="small" style="margin-top:14px">Campaign headlines may be set all lowercase in the display style, with "bitcoin" picked out in orange, as on the card backdrop: <i>the first ever bitcoin card in sri lanka</i>. In running text, write the name as <b>Bitcoin Deepa</b>. The lowercase "bitcoin දීප" is how the logo is drawn, not how the name is typed.</p>
+  </div>
+</div></section>
+
+<section class="ch" id="pattern"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">10</span>Patterns</div>
+  <div>
+    <h2>Primary pattern: ₿</h2>
+    <p class="lede">A staggered field of ₿ marks in Bitcoin orange at about 10% strength. It is the brand's everyday background texture. It repeats on an even grid: ₿ marks every 86 units across and 44 down, each row shifted half a step, so the tile edges never show.</p>
+    <div class="bpat">
+      <div class="bp night"><span>On Black</span></div>
+      <div class="bp warm"><span>On Warm White</span></div>
+    </div>
+    <div class="body" style="margin-top:20px"><p>Keep it quiet so the logo and type sit on top without competing. The one exception is the notebook, where the ₿ marks run at full orange on black as a printed band that fades up the cover.</p></div>
+
+    <h2 style="margin-top:56px">Secondary pattern: spiky tiles</h2>
+    <p class="lede">The CeylonCash heritage pattern, redrawn for Bitcoin Deepa. Same sequence and the same four Lanka colours, but every tile has straight sides and corners that flare out into sharp spikes, echoing the points of the Yaka's crown.</p>
+    <div class="bpat">
+      <div class="lp" style="background-color:#ffffff;background-image:url('img/conc_light.svg');background-size:220px auto"><span style="background:#ffffff;color:#000000;box-shadow:0 1px 3px rgba(0,0,0,.2)">On white</span></div>
+      <div class="lp" style="background-color:#1d1e1d;background-image:url('img/conc_dark.svg');background-size:220px auto"><span style="background:#000000;color:#ffffff">On Cold Storage Charcoal</span></div>
+    </div>
+    <div class="body" style="margin-top:20px"><p>Tall bars in Perahera Maroon, squares in Sinharaja Green, small tiles alternating Thambili Orange and Vesak Gold; every other band is shifted half a step. All tiles use the same spike size, so each shape is symmetrical, and the tile repeats without seams. Use it where the brand needs colour and energy: bands, borders, packaging, merchandise and event décor. Keep logos and text off it, or set them on a solid panel.</p></div>
+  </div>
+</div></section>
+
+<section class="ch" id="voice"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">11</span>Voice</div>
+  <div>
+    <h2>How we sound</h2>
+    <div class="voice">
+      <div><h3>Plain</h3><p class="small">Explain Bitcoin in everyday words. Introduce a technical term only with a short explanation.</p></div>
+      <div><h3>Bilingual</h3><p class="small">Sinhala and English stand side by side as equals. When space allows, give both.</p></div>
+      <div><h3>Proud of the island</h3><p class="small">The mask, the flag colours and the slogan already say this is Sri Lankan Bitcoin. The copy can say it too, without clichés.</p></div>
+    </div>
+    <div class="say">
+      <div class="yes"><div class="tag">Write</div><ul><li>Send Bitcoin to family in minutes.</li><li>Learn what a satoshi is, in Sinhala.</li><li>Bitcoin Deepa · Pearl of Satoshi</li></ul></div>
+      <div class="no"><div class="tag">Avoid</div><ul><li>Get rich with crypto!!!</li><li>Leverage our decentralised Web3 ecosystem.</li><li>BITCOIN DEEPA, BitcoinDeepa, bitcoin deepa</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="files"><div class="wrap ch-grid">
+  <div class="ch-label"><span class="n">12</span>Assets</div>
+  <div>
+    <h2>Assets</h2>
+    <p class="lede">Download the full kit below. Use SVG wherever it is accepted; PNGs are transparent unless noted.</p>
+    <div class="dl-panel">
+      <div>
+        <h3>Download the asset kit</h3>
+        <p class="small">Every logo, symbol, app icon, profile picture, slogan and pattern on this page, organised in numbered folders. Vector files are SVG; every asset also comes as a transparent PNG at 2400px (app icons at 1024px, profile pictures at 1080px).</p>
+      </div>
+      <div class="dl-actions">
+        <a class="dl-btn dl-primary" href="downloads/bitcoin-deepa-brand-assets.zip" id="dl-all">All assets · SVG + PNG <span>17 MB</span></a>
+        <a class="dl-btn" href="downloads/bitcoin-deepa-brand-assets-svg.zip" id="dl-svg">SVG only <span>0.3 MB</span></a>
+        <a class="dl-btn" href="downloads/bitcoin-deepa-brand-assets-png.zip" id="dl-png">PNG only <span>16 MB</span></a>
+      </div>
+      <p class="small dl-status" id="dl-status" role="status" aria-live="polite"></p>
+    </div>
+    <div class="files"><table>
+      <thead><tr><th>Asset</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td><b>Primary logo</b></td><td>Default for everything</td></tr>
+        <tr><td><b>Logo with slogan</b></td><td>Heroes, posters</td></tr>
+        <tr><td><b>Horizontal wordmark</b></td><td>Nav bars, footers</td></tr>
+        <tr><td><b>Wordmark with ₿</b></td><td>Ads, listings</td></tr>
+        <tr><td><b>On orange</b></td><td>Orange grounds only (background included)</td></tr>
+        <tr><td><b>Yaka symbol</b></td><td>The brand symbol: avatars, merchandise, watermarks</td></tr>
+        <tr><td><b>Bold Yaka</b></td><td>Small sizes, embroidery, engraving</td></tr>
+        <tr><td><b>Half Yaka</b></td><td>Edge crops on covers and banners</td></tr>
+        <tr><td><b>Laser-eyed Yaka</b></td><td>Hero moments on dark layouts</td></tr>
+        <tr><td><b>App icon (දීප symbol)</b></td><td>App icons and favicons</td></tr>
+        <tr><td><b>Profile picture</b></td><td>Social profiles (1080px square)</td></tr>
+        <tr><td><b>Slogan</b></td><td>Slogan on its own</td></tr>
+        <tr><td><b>Primary pattern (₿)</b></td><td>Everyday background texture</td></tr>
+        <tr><td><b>Secondary pattern (spiky tiles)</b></td><td>Bands, borders, packaging, décor</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/DeepaLogo_WnO.svg" alt="Bitcoin Deepa">
+    <span>Bitcoin Deepa is a CeylonCash brand. Brand guidelines v1.0, November 2026.</span>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.copy').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var v = b.getAttribute('data-c');
+    var done = function () { b.classList.add('done'); setTimeout(function () { b.classList.remove('done'); }, 1400); };
+    try {
+      navigator.clipboard.writeText(v).then(done, function () { select(b); });
+    } catch (e) { select(b); }
+  });
+});
+function select(el) { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+</script>
+</body>
+</html>

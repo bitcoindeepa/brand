@@ -64,9 +64,11 @@ a { color: var(--orange-text); }
 .tiles-strip span { border-radius: 0 0 8px 8px; }
 
 /* Chapter nav */
+section[id] { scroll-margin-top: 64px; }
 nav.toc { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
-nav.toc .wrap { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-block: 10px; }
+nav.toc .wrap { display: flex; gap: 12px; padding-block: 10px; align-items: center; }
+.toc-links { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; min-width: 0; flex: 1; }
 nav.toc a { flex: none; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 700; padding: 6px 12px; border-radius: var(--r); }
 nav.toc a:hover { color: var(--ink); background: var(--panel); }
 
@@ -403,6 +405,47 @@ footer img { height: 40px; width: auto; }
   .row { grid-template-columns: 1fr; gap: 4px; }
 }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+/* Interactive layer */
+img[data-asset] { cursor: zoom-in; }
+img[data-asset]:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: 4px; }
+nav.toc a[aria-current="true"] { color: var(--ink); background: var(--panel); }
+nav.toc .wrap { align-items: center; }
+.theme-switch { margin-left: auto; flex: none; display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--r); background: var(--panel); }
+.theme-switch button { all: unset; cursor: pointer; font: 700 12px var(--font-body); color: var(--muted); padding: 5px 10px; border-radius: 8px; }
+.theme-switch button[aria-pressed="true"] { background: var(--bg); color: var(--ink); }
+.theme-switch button:focus-visible { outline: 2px solid var(--orange); outline-offset: 1px; }
+h2 .anchor { all: unset; cursor: pointer; margin-left: 10px; font-size: .6em; color: var(--muted); opacity: 0; transition: opacity .15s; vertical-align: middle; }
+h2:hover .anchor, h2 .anchor:focus-visible { opacity: 1; }
+.hint-view { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+dialog.viewer { border: 0; padding: 0; border-radius: 16px; width: min(960px, calc(100vw - 32px)); max-height: calc(100vh - 32px); background: var(--bg); color: var(--ink); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+dialog.viewer::backdrop { background: rgba(0,0,1,.72); }
+.vw { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); min-height: 460px; }
+.vw-stage { display: grid; place-items: center; padding: 40px; transition: background .2s; min-height: 320px; }
+.vw-stage img { max-width: 100%; max-height: 52vh; width: auto; height: auto; }
+.vw-side { padding: 28px; display: grid; gap: 18px; align-content: start; }
+.vw-side h3 { margin: 0; font: 700 22px/1.2 var(--font-display); }
+.vw-side p { margin: 0; color: var(--muted); font-size: 15px; }
+.vw-label { font: 700 12px var(--font-display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.vw-grounds { display: flex; flex-wrap: wrap; gap: 8px; }
+.vw-grounds button { all: unset; cursor: pointer; width: 34px; height: 34px; border-radius: 10px; box-shadow: inset 0 0 0 1px rgba(127,127,127,.4); position: relative; }
+.vw-grounds button.ok::after { content: ""; position: absolute; right: -3px; top: -3px; width: 10px; height: 10px; border-radius: 50%; background: #1e7b4f; box-shadow: 0 0 0 2px var(--bg); }
+.vw-grounds button[aria-pressed="true"] { box-shadow: inset 0 0 0 1px rgba(127,127,127,.4), 0 0 0 2px var(--bg), 0 0 0 4px var(--orange); }
+.vw-grounds button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.vw-verdict { font: 700 14px var(--font-body); padding: 10px 12px; border-radius: 10px; }
+.vw-verdict.ok { background: rgba(30,123,79,.14); color: #1e7b4f; }
+.vw-verdict.no { background: rgba(214,59,59,.14); color: #d63b3b; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vw-verdict.ok { color: #3dbe7a; } :root:not([data-theme="light"]) .vw-verdict.no { color: #f45a5a; } }
+:root[data-theme="dark"] .vw-verdict.ok { color: #3dbe7a; } :root[data-theme="dark"] .vw-verdict.no { color: #f45a5a; }
+.vw-dl { display: flex; flex-wrap: wrap; gap: 8px; }
+.vw-dl a { text-decoration: none; font: 700 14px var(--font-body); padding: 10px 14px; border-radius: var(--r); background: var(--orange); color: #000001; }
+.vw-dl a.alt { background: var(--ink); color: var(--bg); }
+.vw-close { all: unset; cursor: pointer; position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: var(--panel); color: var(--ink); font-size: 20px; }
+.vw-close:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; transition: .2s; background: var(--ink); color: var(--bg); font: 700 14px var(--font-body); padding: 10px 16px; border-radius: var(--r); z-index: 50; pointer-events: none; }
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+@media (max-width: 760px) { .vw { grid-template-columns: 1fr; } .vw-stage { padding: 28px; min-height: 240px; } .theme-switch { margin-left: 8px; } }
+@media (prefers-reduced-motion: reduce) { .vw-stage, .toast, h2 .anchor { transition: none; } }
 </style>
 </head>
 <body>
@@ -425,7 +468,7 @@ footer img { height: 40px; width: auto; }
 
 <nav class="toc" aria-label="Chapters">
   <div class="wrap">
-    <a href="#idea">The idea</a><a href="#logo">Logo</a><a href="#appicon">App icon</a><a href="#dp">Profile picture</a><a href="#grounds">Backgrounds</a><a href="#space">Clear space</a><a href="#misuse">Misuse</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#pattern">Patterns</a><a href="#voice">Voice</a><a href="#files">Assets</a><a href="colour/">Colour system ↗</a>
+    <div class="toc-links"><a href="#idea">The idea</a><a href="#logo">Logo</a><a href="#appicon">App icon</a><a href="#dp">Profile picture</a><a href="#grounds">Backgrounds</a><a href="#space">Clear space</a><a href="#misuse">Misuse</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#pattern">Patterns</a><a href="#voice">Voice</a><a href="#files">Assets</a><a href="colour/">Colour system ↗</a></div><span class="theme-switch" role="group" aria-label="Theme"><button type="button" data-t="auto" aria-pressed="true">Auto</button><button type="button" data-t="light" aria-pressed="false">Light</button><button type="button" data-t="dark" aria-pressed="false">Dark</button></span>
   </div>
 </nav>
 
@@ -452,26 +495,26 @@ footer img { height: 40px; width: auto; }
     <h2>The primary logo</h2>
     <p class="lede">The stacked lockup, mask above wordmark, comes in two versions. Pick by the ground: black wordmark on light, white wordmark on dark. Use it everywhere it fits at 120px wide or more.</p>
     <div class="duo">
-      <div><div class="tile t-white"><img src="img/BDLogo_Black.svg" alt="Primary logo, black version"></div><div class="cap"><b>Black version</b><span>White and light grounds</span></div></div>
-      <div><div class="tile t-black"><img src="img/BDLogo_White.svg" alt="Primary logo, white version"></div><div class="cap"><b>White version</b><span>Black and dark grounds</span></div></div>
+      <div><div class="tile t-white"><img data-asset="01-primary-logo/BDLogo_Black" src="img/BDLogo_Black.svg" alt="Primary logo, black version"></div><div class="cap"><b>Black version</b><span>White and light grounds</span></div></div>
+      <div><div class="tile t-black"><img data-asset="01-primary-logo/BDLogo_White" src="img/BDLogo_White.svg" alt="Primary logo, white version"></div><div class="cap"><b>White version</b><span>Black and dark grounds</span></div></div>
     </div>
 
     <div class="symbol">
-      <div class="sym-hero"><img src="img/Yaka.svg" alt="The Yaka mask, Bitcoin Deepa's symbol"></div>
+      <div class="sym-hero"><img data-asset="04-yaka-symbol/Yaka" src="img/Yaka.svg" alt="The Yaka mask, Bitcoin Deepa's symbol"></div>
       <div class="sym-text">
         <h3 style="font-size:28px;font-weight:700">The Yaka is the symbol</h3>
         <p>The mask stands for the brand on its own: social avatars, merchandise, watermarks, large crops on posters and packaging. Use the gradient version on white or black, and the single-colour versions for one-colour print, engraving and embossing.</p>
         <div class="sym-mono">
-          <div class="t-white"><img src="img/Yaka_Black.png" alt="Yaka mask, black"></div>
-          <div class="t-black"><img src="img/Yaka_White.png" alt="Yaka mask, white"></div>
+          <div class="t-white"><img data-asset="04-yaka-symbol/Yaka_Black" src="img/Yaka_Black.png" alt="Yaka mask, black"></div>
+          <div class="t-black"><img data-asset="04-yaka-symbol/Yaka_White" src="img/Yaka_White.png" alt="Yaka mask, white"></div>
         </div>
         <p style="margin-top:16px">Two more ways the brand uses the mask: <b>cropped off the edge</b> of a layout, half in frame, and as a <b>faint watermark</b> behind content.</p>
       </div>
     </div>
 
     <div class="boldyaka">
-      <div class="by-art"><img src="img/Yaka.svg" alt="Yaka, original stroke"><span>Original</span></div>
-      <div class="by-art"><img src="img/Yaka_Bold.svg" alt="Yaka, bold stroke"><span>Bold</span></div>
+      <div class="by-art"><img data-asset="04-yaka-symbol/Yaka" src="img/Yaka.svg" alt="Yaka, original stroke"><span>Original</span></div>
+      <div class="by-art"><img data-asset="04-yaka-symbol/Yaka_Bold" src="img/Yaka_Bold.svg" alt="Yaka, bold stroke"><span>Bold</span></div>
       <div class="by-text">
         <h3 style="font-size:24px;font-weight:700">Bold Yaka</h3>
         <p>The same mask with every line drawn heavier, so the detail in the crown and the hood rays holds up when the symbol is small or reproduced roughly.</p>
@@ -494,13 +537,13 @@ footer img { height: 40px; width: auto; }
         </ul>
       </div>
       <div class="hy-pair">
-        <div class="hy-demo hy-left"><img src="img/Yaka_Half_Left.svg" alt="Half Yaka, left-aligned, on white"></div>
-        <div class="hy-demo hy-right"><img src="img/Yaka_Half_Right.svg" alt="Half Yaka, right-aligned, on black"></div>
+        <div class="hy-demo hy-left"><img data-asset="04-yaka-symbol/Yaka_Half_Left" src="img/Yaka_Half_Left.svg" alt="Half Yaka, left-aligned, on white"></div>
+        <div class="hy-demo hy-right"><img data-asset="04-yaka-symbol/Yaka_Half_Right" src="img/Yaka_Half_Right.svg" alt="Half Yaka, right-aligned, on black"></div>
       </div>
     </div>
 
     <div class="laser">
-      <div class="laser-art"><img src="img/Yaka_LaserEyes.svg" alt="Yaka mask with glowing laser eyes"></div>
+      <div class="laser-art"><img data-asset="04-yaka-symbol/Yaka_LaserEyes" src="img/Yaka_LaserEyes.svg" alt="Yaka mask with glowing laser eyes"></div>
       <div class="laser-text">
         <h3 style="font-size:24px;font-weight:700">Laser-eyed Yaka</h3>
         <p>The Yaka with the brand's red laser flare on both eyes, used exactly as drawn: a white-hot core, long thin cross rays and a soft red halo. The flare sits low in each eye, in the lower part of the inner oval, not at its centre. It nods to the "laser eyes" of Bitcoin culture and gives the mask a living presence on dark layouts such as covers, banners and event screens.</p>
@@ -514,19 +557,19 @@ footer img { height: 40px; width: auto; }
 
     <div class="family">
       <div class="fam">
-        <div class="pair"><div class="t-white"><img src="img/PrimaryBlack_w_Slogan.png" alt="Primary logo with slogan, for light grounds"></div><div class="t-black"><img src="img/PrimaryWhite_w_Slogan.png" alt="Primary logo with slogan, for dark grounds"></div></div>
+        <div class="pair"><div class="t-white"><img data-asset="02-logo-with-slogan/PrimaryWhite_w_Slogan" src="img/PrimaryBlack_w_Slogan.png" alt="Primary logo with slogan, for light grounds"></div><div class="t-black"><img src="img/PrimaryWhite_w_Slogan.png" alt="Primary logo with slogan, for dark grounds"></div></div>
         <h3>Primary logo with slogan</h3><p>The primary logo with <i>Pearl of Satoshi</i> under "bitcoin", in a black version for light grounds and a white version for dark grounds. Use it for heroes, posters, packaging and campaign openers, where there is room to read the slogan.</p>
       </div>
       <div class="fam">
-        <div class="pair"><div class="t-white"><img src="img/Deepa_Symbol.jpg" alt="Deepa app icon" style="max-height:110px;border-radius:22px"></div><div class="t-black"><img src="img/BD_OrangeBG_White.jpg" alt="Logo on orange, white version" style="max-height:130px;border-radius:8px"></div></div>
+        <div class="pair"><div class="t-white"><img data-asset="06-on-orange/BD_OrangeBG_White" src="img/Deepa_Symbol.jpg" alt="Deepa app icon" style="max-height:110px;border-radius:22px"></div><div class="t-black"><img src="img/BD_OrangeBG_White.jpg" alt="Logo on orange, white version" style="max-height:130px;border-radius:8px"></div></div>
         <h3>App icon and orange version</h3><p>The දීප symbol is the app icon; see the App icon section. The orange-ground files are covered under Backgrounds.</p>
       </div>
       <div class="fam">
-        <div class="pair wide"><div class="t-white"><img src="img/DeepaLogo_BnO.svg" alt="Horizontal wordmark, black and orange"></div><div class="t-black"><img src="img/DeepaLogo_WnO.svg" alt="Horizontal wordmark, white and orange"></div></div>
+        <div class="pair wide"><div class="t-white"><img data-asset="03-wordmark/DeepaLogo_WnO" src="img/DeepaLogo_BnO.svg" alt="Horizontal wordmark, black and orange"></div><div class="t-black"><img src="img/DeepaLogo_WnO.svg" alt="Horizontal wordmark, white and orange"></div></div>
         <h3>Horizontal wordmark</h3><p>Navigation bars, email footers, and anywhere the stacked logo would be under 120px wide.</p>
       </div>
       <div class="fam">
-        <div class="pair wide"><div class="t-white"><img src="img/Logo_b_BTC.png" alt="Wordmark with Bitcoin coin, black"></div><div class="t-black"><img src="img/Logo_w_BTC.png" alt="Wordmark with Bitcoin coin, white"></div></div>
+        <div class="pair wide"><div class="t-white"><img data-asset="03-wordmark/Logo_w_BTC" src="img/Logo_b_BTC.png" alt="Wordmark with Bitcoin coin, black"></div><div class="t-black"><img src="img/Logo_w_BTC.png" alt="Wordmark with Bitcoin coin, white"></div></div>
         <h3>Wordmark with ₿ coin</h3><p>Ads, app-store listings and partner pages, for people who don't yet link the name with Bitcoin.</p>
       </div>
     </div>
@@ -558,11 +601,11 @@ footer img { height: 40px; width: auto; }
       </div>
       <div class="ai-files">
         <div class="ai-file">
-          <img src="img/icon_std.png" alt="Standard app icon artwork">
+          <img data-asset="05-app-icon/AppIcon_Light" src="img/icon_std.png" alt="Standard app icon artwork">
           <div><h3>Standard icon</h3><p class="small">Standard artwork. The glyph fills about half the tile, leaving room for the masks phones apply. Use for the App Store, Google Play, iOS, Android and PWA icons.</p></div>
         </div>
         <div class="ai-file">
-          <img src="img/icon_L.png" alt="Large-glyph icon artwork">
+          <img data-asset="05-app-icon/AppIcon_Small_Light" src="img/icon_L.png" alt="Large-glyph icon artwork">
           <div><h3>Large-glyph icon</h3><p class="small">Large glyph, tighter margins. Use at 48px and below: favicons, browser tabs, notification badges, where every pixel of glyph counts.</p></div>
         </div>
       </div>
@@ -570,9 +613,9 @@ footer img { height: 40px; width: auto; }
 
     <h3 class="use-h">Light, dark and orange</h3>
     <div class="ai-themes">
-      <div class="ai-theme light"><div class="ai-pair"><img src="img/icon_std.png" alt="Light app icon"><img src="img/icon_L.png" alt="Light small icon"></div><div><h3>Light</h3><p class="small">Orange glyph on a white tile. The default icon, and the one for light-mode home screens and light browser tabs.</p></div></div>
-      <div class="ai-theme dark"><div class="ai-pair"><img src="img/icon_std_dark.png" alt="Dark app icon"><img src="img/icon_L_dark.png" alt="Dark small icon"></div><div><h3>Dark</h3><p class="small">The same orange glyph on a Cold Storage Charcoal (#1D1E1D) tile, for dark-mode home screens (iOS 18 and later supports a separate dark icon) and dark browser tabs.</p></div></div>
-      <div class="ai-theme orange"><div class="ai-pair"><img src="img/icon_std_orange.png" alt="Orange app icon"><img src="img/icon_L_orange.png" alt="Orange small icon"></div><div><h3>Orange</h3><p class="small">A white glyph on a Satoshi Orange (#F8931A) tile. Use it for campaigns, event apps, launchers and sticker packs, where the icon should read as Bitcoin orange at a glance.</p></div></div>
+      <div class="ai-theme light"><div class="ai-pair"><img data-asset="05-app-icon/AppIcon_Small_Light" src="img/icon_std.png" alt="Light app icon"><img src="img/icon_L.png" alt="Light small icon"></div><div><h3>Light</h3><p class="small">Orange glyph on a white tile. The default icon, and the one for light-mode home screens and light browser tabs.</p></div></div>
+      <div class="ai-theme dark"><div class="ai-pair"><img data-asset="05-app-icon/AppIcon_Small_Dark" src="img/icon_std_dark.png" alt="Dark app icon"><img src="img/icon_L_dark.png" alt="Dark small icon"></div><div><h3>Dark</h3><p class="small">The same orange glyph on a Cold Storage Charcoal (#1D1E1D) tile, for dark-mode home screens (iOS 18 and later supports a separate dark icon) and dark browser tabs.</p></div></div>
+      <div class="ai-theme orange"><div class="ai-pair"><img data-asset="05-app-icon/AppIcon_Small_Orange" src="img/icon_std_orange.png" alt="Orange app icon"><img src="img/icon_L_orange.png" alt="Orange small icon"></div><div><h3>Orange</h3><p class="small">A white glyph on a Satoshi Orange (#F8931A) tile. Use it for campaigns, event apps, launchers and sticker packs, where the icon should read as Bitcoin orange at a glance.</p></div></div>
     </div>
 
     <h3 class="use-h">Sizes</h3>
@@ -607,9 +650,9 @@ footer img { height: 40px; width: auto; }
     <h2>Profile picture</h2>
     <p class="lede">For social profiles, the ₿ coin with the දීප symbol on a solid square, in three versions: on black, on white and on Satoshi Orange.</p>
     <div class="dp-row">
-      <figure class="dp"><img src="img/DP_Black_BTC.png" alt="Profile picture: orange Bitcoin coin and Deepa symbol on black"><figcaption><b>Black</b><span>Orange ₿ coin and දීප on Genesis Black, with the ₿ cut out to the ground. The default for the brand's social accounts.</span></figcaption></figure>
-      <figure class="dp"><img src="img/DP_White_BTC.png" alt="Profile picture: orange Bitcoin coin and Deepa symbol on white"><figcaption><b>White</b><span>Orange ₿ coin and දීප on Whitepaper White, with the ₿ cut out to the ground. For platforms with dark interfaces, where black disappears.</span></figcaption></figure>
-      <figure class="dp"><img src="img/DP_Orange_BTC.png" alt="Profile picture: white Bitcoin coin and Deepa symbol on orange"><figcaption><b>Orange</b><span>White ₿ coin and දීප on Satoshi Orange, with the ₿ cut out to the ground. For campaigns and events.</span></figcaption></figure>
+      <figure class="dp"><img data-asset="09-profile-picture/DP_Black" src="img/DP_Black_BTC.png" alt="Profile picture: orange Bitcoin coin and Deepa symbol on black"><figcaption><b>Black</b><span>Orange ₿ coin and දීප on Genesis Black, with the ₿ cut out to the ground. The default for the brand's social accounts.</span></figcaption></figure>
+      <figure class="dp"><img data-asset="09-profile-picture/DP_White" src="img/DP_White_BTC.png" alt="Profile picture: orange Bitcoin coin and Deepa symbol on white"><figcaption><b>White</b><span>Orange ₿ coin and දීප on Whitepaper White, with the ₿ cut out to the ground. For platforms with dark interfaces, where black disappears.</span></figcaption></figure>
+      <figure class="dp"><img data-asset="09-profile-picture/DP_Orange" src="img/DP_Orange_BTC.png" alt="Profile picture: white Bitcoin coin and Deepa symbol on orange"><figcaption><b>Orange</b><span>White ₿ coin and දීප on Satoshi Orange, with the ₿ cut out to the ground. For campaigns and events.</span></figcaption></figure>
     </div>
     <h3 class="use-h">In the feed</h3>
     <div class="dp-sizes">
@@ -631,9 +674,9 @@ footer img { height: 40px; width: auto; }
     <h2>Three approved grounds</h2>
     <p class="lede">White, black and Bitcoin orange. On orange the logo changes: the mask turns single-colour and දීප turns black, because orange on orange disappears. Use only the two orange-ground files there.</p>
     <div class="grounds">
-      <div><div class="tile t-white"><img src="img/BDLogo_Black.svg" alt="Logo on white"></div><div class="cap"><b>White</b><span>Black version</span></div></div>
-      <div><div class="tile t-black"><img src="img/BDLogo_White.svg" alt="Logo on black"></div><div class="cap"><b>Black</b><span>White version</span></div></div>
-      <div><div class="tile t-orange full"><img src="img/BD_OrangeBG_Black.jpg" alt="Logo on orange, black version"></div><div class="cap"><b>Orange</b><span>Orange-ground versions only</span></div></div>
+      <div><div class="tile t-white"><img data-asset="01-primary-logo/BDLogo_Black" src="img/BDLogo_Black.svg" alt="Logo on white"></div><div class="cap"><b>White</b><span>Black version</span></div></div>
+      <div><div class="tile t-black"><img data-asset="01-primary-logo/BDLogo_White" src="img/BDLogo_White.svg" alt="Logo on black"></div><div class="cap"><b>Black</b><span>White version</span></div></div>
+      <div><div class="tile t-orange full"><img data-asset="06-on-orange/BD_OrangeBG_Black" src="img/BD_OrangeBG_Black.jpg" alt="Logo on orange, black version"></div><div class="cap"><b>Orange</b><span>Orange-ground versions only</span></div></div>
     </div>
     <div class="body" style="margin-top:24px">
       <p><b>Photos:</b> place the logo only over a calm area where the matching version stands out clearly. If the area is busy, put the logo on a solid white or black panel first.</p>
@@ -833,13 +876,133 @@ footer img { height: 40px; width: auto; }
 document.querySelectorAll('.copy').forEach(function (b) {
   b.addEventListener('click', function () {
     var v = b.getAttribute('data-c');
-    var done = function () { b.classList.add('done'); setTimeout(function () { b.classList.remove('done'); }, 1400); };
+    var done = function () { b.classList.add('done'); if (window.bdToast) window.bdToast('Copied ' + v); setTimeout(function () { b.classList.remove('done'); }, 1400); };
     try {
       navigator.clipboard.writeText(v).then(done, function () { select(b); });
     } catch (e) { select(b); }
   });
 });
 function select(el) { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+</script>
+
+<dialog class="viewer" id="viewer" aria-labelledby="vw-title">
+  <button class="vw-close" type="button" id="vw-close" aria-label="Close">×</button>
+  <div class="vw">
+    <div class="vw-stage" id="vw-stage"><img id="vw-img" alt=""></div>
+    <div class="vw-side">
+      <div><h3 id="vw-title"></h3><p id="vw-use"></p></div>
+      <div id="vw-ground-wrap"><div class="vw-label">Try it on a ground · green dot = approved</div><div class="vw-grounds" id="vw-grounds"></div></div>
+      <div class="vw-verdict" id="vw-verdict" role="status" aria-live="polite"></div>
+      <div><div class="vw-label">Download</div><div class="vw-dl" id="vw-dl"></div></div>
+    </div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function () {
+  var ASSETS = {"01-primary-logo/BDLogo_White": {"name": "Primary logo, white", "grounds": ["black", "charcoal"], "use": "Use on black and dark grounds.", "formats": ["svg", "png"]}, "01-primary-logo/BDLogo_Black": {"name": "Primary logo, black", "grounds": ["white", "cream"], "use": "Use on white and light grounds.", "formats": ["svg", "png"]}, "09-profile-picture/DP_Orange": {"name": "Profile picture, orange", "grounds": null, "use": "1080px square, for campaigns and events.", "formats": ["png"]}, "09-profile-picture/DP_White": {"name": "Profile picture, white", "grounds": null, "use": "1080px square, for dark platforms.", "formats": ["png"]}, "09-profile-picture/DP_Black": {"name": "Profile picture, black", "grounds": null, "use": "1080px square. The default for social profiles.", "formats": ["png"]}, "05-app-icon/AppIcon_Light": {"name": "App icon, light", "grounds": null, "use": "1024px square master for app stores and home screens.", "formats": ["png"]}, "05-app-icon/AppIcon_Small_Orange": {"name": "Small icon, orange", "grounds": null, "use": "Large glyph on orange.", "formats": ["png"]}, "05-app-icon/AppIcon_Small_Light": {"name": "Small icon, light", "grounds": null, "use": "Large glyph for 48px and below: favicons, tabs, badges.", "formats": ["png"]}, "05-app-icon/AppIcon_Dark": {"name": "App icon, dark", "grounds": null, "use": "1024px square for dark-mode home screens.", "formats": ["png"]}, "05-app-icon/AppIcon_Small_Dark": {"name": "Small icon, dark", "grounds": null, "use": "Large glyph for dark tabs and badges.", "formats": ["png"]}, "05-app-icon/AppIcon_Orange": {"name": "App icon, orange", "grounds": null, "use": "1024px square for campaigns and event apps.", "formats": ["png"]}, "06-on-orange/BD_OrangeBG_Black": {"name": "Logo on orange, black", "grounds": null, "use": "The only approved logo for a Satoshi Orange ground. Includes its own orange ground.", "formats": ["png"]}, "06-on-orange/BD_OrangeBG_White": {"name": "Logo on orange, white", "grounds": null, "use": "The only approved logo for a Satoshi Orange ground. Includes its own orange ground.", "formats": ["png"]}, "04-yaka-symbol/Yaka_Bold": {"name": "Yaka, bold", "grounds": ["white", "cream", "black", "charcoal"], "use": "For small sizes, embroidery and rough print.", "formats": ["svg", "png"]}, "04-yaka-symbol/Yaka_Black": {"name": "Yaka, single colour black", "grounds": ["white", "cream", "orange"], "use": "One-colour print, engraving, embossing.", "formats": ["png"]}, "04-yaka-symbol/Yaka_Half_Left": {"name": "Half Yaka, left-aligned", "grounds": ["white", "cream", "black", "charcoal"], "use": "Edge crops: the cut side sits flush on the left edge.", "formats": ["svg", "png"]}, "04-yaka-symbol/Yaka_White": {"name": "Yaka, single colour white", "grounds": ["black", "charcoal"], "use": "One-colour print on dark grounds.", "formats": ["png"]}, "04-yaka-symbol/Yaka": {"name": "Yaka, gradient", "grounds": ["white", "cream", "black", "charcoal"], "use": "The brand symbol. White, cream, black or charcoal grounds.", "formats": ["svg", "png"]}, "04-yaka-symbol/Yaka_ExtraBold": {"name": "Yaka, extra bold", "grounds": ["white", "cream", "black", "charcoal"], "use": "For embroidery and engraving.", "formats": ["svg", "png"]}, "04-yaka-symbol/Yaka_Half_Right": {"name": "Half Yaka, right-aligned", "grounds": ["white", "cream", "black", "charcoal"], "use": "Edge crops: the cut side sits flush on the right edge.", "formats": ["svg", "png"]}, "04-yaka-symbol/Yaka_LaserEyes": {"name": "Laser-eyed Yaka", "grounds": ["black", "charcoal"], "use": "Dark grounds only, one per layout as a hero moment.", "formats": ["svg", "png"]}, "02-logo-with-slogan/PrimaryWhite_w_Slogan": {"name": "Primary logo with slogan, white", "grounds": ["black", "charcoal"], "use": "Heroes, posters and campaign openers on dark grounds.", "formats": ["png"]}, "02-logo-with-slogan/PrimaryBlack_w_Slogan": {"name": "Primary logo with slogan, black", "grounds": ["white", "cream"], "use": "Heroes, posters and campaign openers on light grounds.", "formats": ["png"]}, "03-wordmark/DeepaLogo_BnO": {"name": "Horizontal wordmark, black and orange", "grounds": ["white", "cream"], "use": "Nav bars and footers on light grounds.", "formats": ["svg", "png"]}, "03-wordmark/DeepaLogo_WnO": {"name": "Horizontal wordmark, white and orange", "grounds": ["black", "charcoal"], "use": "Nav bars and footers on dark grounds.", "formats": ["svg", "png"]}, "03-wordmark/Logo_w_BTC": {"name": "Wordmark with ₿ coin, white", "grounds": ["black", "charcoal"], "use": "Ads and listings, dark grounds.", "formats": ["png"]}, "03-wordmark/Logo_b_BTC": {"name": "Wordmark with ₿ coin, black", "grounds": ["white", "cream"], "use": "Ads and listings, light grounds.", "formats": ["png"]}};
+  var GROUNDS = [
+    { id: "white", name: "Whitepaper White", c: "#FFFFFE" },
+    { id: "cream", name: "Paper Wallet Cream", c: "#FFFCFA" },
+    { id: "black", name: "Genesis Black", c: "#000001" },
+    { id: "charcoal", name: "Cold Storage Charcoal", c: "#1D1E1D" },
+    { id: "orange", name: "Satoshi Orange", c: "#F8931A" }
+  ];
+  var toastEl = document.getElementById("toast"), toastT;
+  function toast(t) { toastEl.textContent = t; toastEl.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove("on"); }, 1600); }
+  window.bdToast = toast;
+
+  /* Asset viewer */
+  var dlg = document.getElementById("viewer"), stage = document.getElementById("vw-stage"), img = document.getElementById("vw-img");
+  var title = document.getElementById("vw-title"), use = document.getElementById("vw-use"), gWrap = document.getElementById("vw-ground-wrap");
+  var gBox = document.getElementById("vw-grounds"), verdict = document.getElementById("vw-verdict"), dl = document.getElementById("vw-dl");
+  var opener = null, current = null;
+  function setGround(g) {
+    stage.style.background = g.c;
+    Array.prototype.forEach.call(gBox.children, function (b) { b.setAttribute("aria-pressed", String(b.dataset.g === g.id)); });
+    var ok = current.grounds.indexOf(g.id) !== -1;
+    verdict.className = "vw-verdict " + (ok ? "ok" : "no");
+    verdict.textContent = (ok ? "Approved on " : "Not approved on ") + g.name + (ok ? "." : ". Pick a ground with a green dot.");
+  }
+  function open(key, from) {
+    var a = ASSETS[key]; if (!a) return;
+    current = a; opener = from;
+    var file = "assets/" + key + "." + a.formats[0];
+    img.src = file; img.alt = a.name; title.textContent = a.name; use.textContent = a.use;
+    dl.innerHTML = "";
+    a.formats.forEach(function (ext, i) {
+      var l = document.createElement("a"); l.href = "assets/" + key + "." + ext; l.download = key.split("/").pop() + "." + ext;
+      l.textContent = "Download " + ext.toUpperCase(); if (i) l.className = "alt"; dl.appendChild(l);
+    });
+    if (a.grounds) {
+      gWrap.hidden = false; verdict.hidden = false; gBox.innerHTML = "";
+      GROUNDS.forEach(function (g) {
+        var b = document.createElement("button"); b.type = "button"; b.dataset.g = g.id; b.style.background = g.c;
+        b.setAttribute("aria-label", g.name + (a.grounds.indexOf(g.id) !== -1 ? " (approved)" : " (not approved)")); if (a.grounds.indexOf(g.id) !== -1) b.className = "ok"; b.title = g.name;
+        b.addEventListener("click", function () { setGround(g); });
+        gBox.appendChild(b);
+      });
+      setGround(GROUNDS.filter(function (g) { return g.id === a.grounds[0]; })[0]);
+    } else {
+      gWrap.hidden = true; verdict.hidden = true; stage.style.background = "var(--panel)";
+    }
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  function close() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
+  dlg.addEventListener("close", function () { if (opener) opener.focus(); });
+  document.getElementById("vw-close").addEventListener("click", close);
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });
+  Array.prototype.forEach.call(document.querySelectorAll("img[data-asset]"), function (el) {
+    if (!ASSETS[el.dataset.asset]) return;
+    el.tabIndex = 0; el.setAttribute("role", "button");
+    el.setAttribute("aria-label", "View and download: " + ASSETS[el.dataset.asset].name);
+    el.addEventListener("click", function () { open(el.dataset.asset, el); });
+    el.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(el.dataset.asset, el); } });
+  });
+  var logo = document.getElementById("logo");
+  if (logo) { var h = logo.querySelector("h2"); if (h) { var p = document.createElement("p"); p.className = "hint-view"; p.textContent = "Select any logo, symbol, icon or profile picture on this page to see it on each ground and download it."; h.parentNode.insertBefore(p, h.nextSibling); } }
+
+  /* Theme switch */
+  var root = document.documentElement, KEY = "bd-theme";
+  function applyTheme(t) {
+    if (t === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", t);
+    Array.prototype.forEach.call(document.querySelectorAll(".theme-switch button"), function (b) { b.setAttribute("aria-pressed", String(b.dataset.t === t)); });
+  }
+  var saved = "auto"; try { saved = localStorage.getItem(KEY) || "auto"; } catch (e) {}
+  applyTheme(saved);
+  Array.prototype.forEach.call(document.querySelectorAll(".theme-switch button"), function (b) {
+    b.addEventListener("click", function () { applyTheme(b.dataset.t); try { localStorage.setItem(KEY, b.dataset.t); } catch (e) {} });
+  });
+
+  /* Section links and scroll-aware nav */
+  var links = Array.prototype.slice.call(document.querySelectorAll("nav.toc a[href^='#']"));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  secs.forEach(function (sec) {
+    var h = sec.querySelector("h2"); if (!h) return;
+    var b = document.createElement("button"); b.className = "anchor"; b.type = "button"; b.textContent = "#"; b.setAttribute("aria-label", "Copy link to this section");
+    b.addEventListener("click", function () {
+      var url = location.href.split("#")[0] + "#" + sec.id;
+      history.replaceState(null, "", "#" + sec.id);
+      try { navigator.clipboard.writeText(url).then(function () { toast("Link copied"); }, function () { toast("Link: " + url); }); } catch (e) { toast("Link: " + url); }
+    });
+    h.appendChild(b);
+  });
+  if ("IntersectionObserver" in window) {
+    var vis = {};
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (e) { vis[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+      var best = null, top = Infinity;
+      secs.forEach(function (sec) { if (vis[sec.id] > 0) { var t = Math.abs(sec.getBoundingClientRect().top); if (t < top) { top = t; best = sec.id; } } });
+      links.forEach(function (a) {
+        var on = a.getAttribute("href") === "#" + best;
+        if (on) { a.setAttribute("aria-current", "true"); var nav = a.parentNode; var l = a.offsetLeft - 16; if (l < nav.scrollLeft || l + a.offsetWidth > nav.scrollLeft + nav.clientWidth) nav.scrollTo({ left: l, behavior: "smooth" }); }
+        else a.removeAttribute("aria-current");
+      });
+    }, { rootMargin: "-80px 0px -55% 0px", threshold: [0, 0.01, 0.25] });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) root.style.scrollBehavior = "smooth";
+})();
 </script>
 </body>
 </html>

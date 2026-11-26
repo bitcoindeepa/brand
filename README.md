@@ -14,13 +14,13 @@ The official brand assets and guidelines for **Bitcoin Deepa**, the *Pearl of Sa
 
 <sub>The primary logo: <b>BDLogo_Black</b> on light grounds, <b>BDLogo_White</b> on dark. This preview follows your GitHub theme.</sub>
 
-**App icons** (`05-app-icon/`)
+**App icon** (`05-app-icon/`): white දීප on Satoshi Orange is the icon; light and dark are alternates.
 
-<img src="./assets/05-app-icon/AppIcon_Light.png" alt="App icon, light" width="72"> <img src="./assets/05-app-icon/AppIcon_Dark.png" alt="App icon, dark" width="72"> <img src="./assets/05-app-icon/AppIcon_Orange.png" alt="App icon, orange" width="72">
+<img src="./assets/05-app-icon/AppIcon_Orange.png" alt="App icon, orange (primary)" width="88"> <img src="./assets/05-app-icon/AppIcon_Light.png" alt="App icon, light" width="64"> <img src="./assets/05-app-icon/AppIcon_Dark.png" alt="App icon, dark" width="64">
 
-**Profile pictures** (`09-profile-picture/`)
+**Profile picture** (`09-profile-picture/`): the same, white දීප on orange, on every account.
 
-<img src="./assets/09-profile-picture/DP_Black.png" alt="Profile picture on black" width="88"> <img src="./assets/09-profile-picture/DP_White.png" alt="Profile picture on white" width="88"> <img src="./assets/09-profile-picture/DP_Orange.png" alt="Profile picture on orange" width="88">
+<img src="./assets/09-profile-picture/DP_Orange.png" alt="Profile picture, orange (primary)" width="88"> <img src="./assets/09-profile-picture/DP_White.png" alt="Profile picture on white" width="64"> <img src="./assets/09-profile-picture/DP_Black.png" alt="Profile picture on black" width="64">
 
 **The Yaka** (`04-yaka-symbol/`)
 
@@ -34,11 +34,11 @@ assets/
   02-logo-with-slogan/   Primary logo with "Pearl of Satoshi" (PNG)
   03-wordmark/           Horizontal wordmark, and the wordmark with the ₿ coin
   04-yaka-symbol/        The Yaka: gradient, bold, single colour, half Yaka, laser eyes
-  05-app-icon/           දීප app icons: light, dark, orange; standard and large glyph (1024px)
+  05-app-icon/           දීප app icon: orange (primary), light, dark (1024px)
   06-on-orange/          The only logos for a Satoshi Orange ground
   07-slogan/             "Pearl of Satoshi" artwork
   08-patterns/           Primary ₿ pattern and secondary spiky-tile pattern
-  09-profile-picture/    Social profile pictures, ₿ coin and දීප (1080px)
+  09-profile-picture/    Social profile pictures: දීප on orange (primary), white, black (1080px)
 site/
   index.html             The brand guidelines page, published to GitHub Pages
   colour/index.html      The colour system: themes, contrast checks, CSS tokens

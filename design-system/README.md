@@ -24,21 +24,20 @@ The primary logo is the stacked lockup: Yaka mask above the wordmark **bitcoin �
 - **Bold Yaka** (`Yaka_Bold.svg`, and a heavier `Yaka_ExtraBold.svg` for embroidery): the same mask with heavier lines so detail holds when small or roughly reproduced. Use below about 200px on screen and for embroidery, engraving, stamps, distant signage and small print; use the original line weight everywhere else. Never mix the two weights in one layout.
 - **Half Yaka** (`Yaka_Half_Left.svg`, `Yaka_Half_Right.svg`): the mask cut down its centre line for edge crops on covers, banners, pull-ups and slides. Left-aligned is the right half of the mask, flush to a layout's left edge; right-aligned is the left half, flush to the right edge. Keep the cut exactly on the layout edge, never inside the frame.
 - **Laser-eyed Yaka** (`Yaka_LaserEyes.png`, transparent): the gradient Yaka with the brand's red laser flare on both eyes (white-hot core, long thin cross rays, soft red halo). The flare sits low in each eye, in the lower part of the inner oval, not at its centre. The flare alone is `BD_Laser_Flare.png`. Dark grounds only (`brand-black`, `charcoal`); one per layout as a hero moment. Keep the lasers red and on both eyes of a full mask; edge crops showing one eye are fine.
-- **App icon** (`05-app-icon/`): the දීප symbol is the app icon and favicon. At icon sizes the Yaka's fine lines would fill in.
+- **App icon** (`05-app-icon/`): the large දීප symbol, white on orange, is the app icon and favicon. At icon sizes the Yaka's fine lines would fill in.
 
 ### App icon
 
-- The app icon is the දීප symbol: `bitcoin-orange` glyph on a `brand-white` tile. It is the only mark used without the Yaka, because the mask's fine lines fill in at icon sizes.
-- `AppIcon_Light.png`: standard artwork, glyph about half the tile. Use for the App Store, Google Play, iOS, Android and PWA icons. It sits inside Android's adaptive-icon safe zone (inner 66%), so no mask crops it.
-- `AppIcon_Small_Light.png`: larger glyph, tighter margins. Use at 48px and below: favicons, browser tabs, notification badges.
+- The app icon is the දීප symbol, drawn large: a `brand-white` glyph on a `bitcoin-orange` tile (`AppIcon_Orange.png`). It is the only mark used without the Yaka, because the mask's fine lines fill in at icon sizes.
+- One artwork at every size, from the store listing to a 16px favicon. The large glyph fits the common iOS and Android masks, but its tips reach past Android's adaptive-icon safe zone (inner 66% circle): for an Android adaptive icon, scale the glyph down to fit that circle on the foreground layer.
+- Alternates: light (`AppIcon_Light.png`, `bitcoin-orange` glyph on `brand-white`) where a platform asks for a light variant, and dark (`AppIcon_Dark.png`, `bitcoin-orange` glyph on `charcoal`) for dark-mode home screens.
 - Supply a square 1024px master with no transparency; the platform rounds the corners.
-- Three appearances: light (orange glyph on `brand-white`, the default), dark (orange glyph on `charcoal`) for dark-mode home screens, and orange (white glyph on `bitcoin-orange`) for campaigns, event apps and sticker packs.
 - Never: an orange glyph on orange, gradients, borders, the wordmark, the ₿ coin or the Yaka on the icon.
 
 ### Profile pictures
 
-- Social profiles use the ₿ coin with the දීප symbol (`09-profile-picture/`): orange mark on `brand-black` (the default), orange mark on `brand-white`, or white mark on `bitcoin-orange`. The ₿ inside the coin is cut out to the ground colour.
-- 1080px squares; the mark is 66% of the width, centred, so platform circle crops never touch it.
+- Social profiles use the දීප symbol alone, large (`09-profile-picture/`). The profile picture is `DP_Orange.png`: `brand-white` glyph on `bitcoin-orange`, on every account. `DP_White.png` and `DP_Black.png` (`bitcoin-orange` glyph) are alternates for platforms or partners that need a light or dark avatar.
+- 1080px squares; the glyph is 62% of the height, centred, so platform circle crops never touch it. No ₿ coin, wordmark or Yaka.
 
 ### Backgrounds
 

@@ -29,7 +29,7 @@ The primary logo is the stacked lockup: Yaka mask above the wordmark **bitcoin �
 ### App icon
 
 - The app icon is the දීප symbol, drawn large: a `brand-white` glyph on a `bitcoin-orange` tile (`AppIcon_Orange.png`). It is the only mark used without the Yaka, because the mask's fine lines fill in at icon sizes.
-- One artwork at every size, from the store listing to a 16px favicon. The large glyph fits the common iOS and Android masks, but its tips reach past Android's adaptive-icon safe zone (inner 66% circle): for an Android adaptive icon, scale the glyph down to fit that circle on the foreground layer.
+- One artwork at every size, from the store listing to a 16px favicon. The large glyph fits the common iOS and Android masks, but its tips reach past Android's adaptive-icon safe zone (inner 66% circle): so the Android adaptive icon uses `AppIcon_Android_Foreground.png` (transparent, glyph inside the safe zone) on a `bitcoin-orange` background layer; the same file is the monochrome layer for themed icons.
 - Alternates: light (`AppIcon_Light.png`, `bitcoin-orange` glyph on `brand-white`) where a platform asks for a light variant, and dark (`AppIcon_Dark.png`, `bitcoin-orange` glyph on `charcoal`) for dark-mode home screens.
 - Supply a square 1024px master with no transparency; the platform rounds the corners.
 - Never: an orange glyph on orange, gradients, borders, the wordmark, the ₿ coin or the Yaka on the icon.

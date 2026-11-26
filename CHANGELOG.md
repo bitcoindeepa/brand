@@ -8,6 +8,7 @@ All notable changes to the Bitcoin Deepa brand are recorded here. The format fol
 
 - Public brand site on GitHub Pages: the brand guidelines and the colour system as web pages, with every asset at a stable URL and downloadable zips (all assets, SVG only, PNG only) built on each change.
 - A visual quick reference in the README.
+- Android adaptive-icon foreground layer (`AppIcon_Android_Foreground.png`), also used as the monochrome layer for themed icons, and iOS and Android home-screen previews on the brand site.
 - An asset viewer on the brand site: select any logo, symbol, icon or profile picture to see it on each brand ground and download it. Plus a light/dark switch, chapter highlighting and copyable section links.
 
 ### Changed
